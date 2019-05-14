@@ -357,8 +357,7 @@
       
         
           
-            <p>#　一些网站和常用命令</p>
-<h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><ul>
+            <h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><ul>
 <li><a href="https://www.cnblogs.com/jackyroc/p/7681938.html" target="_blank" rel="noopener">我是如何利用github pages搭建起我的博客的</a></li>
 <li><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">Hexo-Next配置超炫网页效果</a></li>
 <li><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next官方文档</a></li>
@@ -366,6 +365,17 @@
 <li><a href="http://rayboo.netlify.com/2018/10/29/hexo-next-%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%8A%A8%E7%94%BB/" target="_blank" rel="noopener">鼠标点击爆炸效果的实现</a></li>
 <li><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Hexo搭建个人博客－－Next主题优化</a></li>
 <li><a href="https://blog.csdn.net/ganzhilin520/article/details/79047249" target="_blank" rel="noopener">Hexo设置关于、标签、分类、归档</a></li>
+</ul>
+<h3 id="博客上传文件步骤"><a href="#博客上传文件步骤" class="headerlink" title="博客上传文件步骤"></a>博客上传文件步骤</h3><ul>
+<li>myblog目录下在命令行中输入（xxx为文章名称），之后在source/_posts，目录下会自动生成xxxx.md文件<br><code>hexo new &quot;xxxx&quot;</code></li>
+<li><p>打开之后会看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: xxxx</span><br><span class="line">data: 2018-5-14 10:42:50</span><br><span class="line">tages:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后可以在上面设置关于、标签、分类和归档等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">title: xxxx</span><br><span class="line">data: 2018-5-14 10:42:50</span><br><span class="line">tages:  //标签</span><br><span class="line">- tag1</span><br><span class="line">- tag2</span><br><span class="line">categories: //分类</span><br><span class="line">- 1</span><br><span class="line">- 2</span><br><span class="line">about: //关于</span><br><span class="line">archives: //归档</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>myblog目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g //完整命令为hexo generate，用于生成静态文件</span><br><span class="line">hexo s //完整命令为hexo server，可在本地预览查看</span><br><span class="line">hexo d //完整命令为hexo deploy，上传</span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
