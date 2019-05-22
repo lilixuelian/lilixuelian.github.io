@@ -348,18 +348,18 @@
 <li>http header</li>
 </ul>
 <hr>
-<h1 id="CDN缓存"><a href="#CDN缓存" class="headerlink" title="CDN缓存"></a>CDN缓存</h1><h2 id="什么是CDN"><a href="#什么是CDN" class="headerlink" title="什么是CDN?"></a>什么是CDN?</h2><p>CDN(Content Delivery Network): 即内容分发网络<br>看到一个形象的比喻，来比喻CDN。</p>
+<h1 id="CDN缓存"><a href="#CDN缓存" class="headerlink" title="CDN缓存"></a>CDN缓存</h1><h3 id="什么是CDN"><a href="#什么是CDN" class="headerlink" title="什么是CDN?"></a>什么是CDN?</h3><p>CDN(Content Delivery Network): 即内容分发网络<br>看到一个形象的比喻，来比喻CDN。</p>
 <p>10年前，还没有火车票代售点一说，12306.cn更是无从说起。那时候火车票还只能在火车站的售票大厅购买，而我所在的小县城并不通火车，火车票都要去市里的火车站购买，而从我家到县城再到市里，来回就是4个小时车程，简直就是浪费生命。后来就好了，小县城里出现了火车票代售点，甚至乡镇上也有了代售点，可以直接在代售点购买火车票，方便了不少，全市人民再也不用在一个点苦逼的排队买票了。</p>
 <p>CDN就可以理解为分布在每个县城或者乡镇的火车票代售点，用户在浏览网站的时候，CDN会选择一个离用户最近的CDN边缘节点来响应用户的请求，这样海南移动用户的请求就不会千里迢迢跑到北京电信机房的服务器（假设源站部署在北京电信机房）上了。</p>
-<h2 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h2><ul>
+<h3 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h3><ul>
 <li>CDN节点解决了跨运营商和跨地域访问的问题，访问延时大大降低；</li>
 <li>大部分请求在CDN边缘节点完成，CDN起到了分流作用，减轻了源站的负载。</li>
 </ul>
-<h2 id="CDN的工作机制"><a href="#CDN的工作机制" class="headerlink" title="CDN的工作机制"></a>CDN的工作机制</h2><p>关于CDN缓存 ，在浏览器本地缓存失效后，浏览器会向CDN边缘节点发起请求。类似浏览器缓存，CDN边缘节点也存在着一套缓存机制。CDN边缘节点缓存策略因服务商不同而不同，但一般都会遵循http标准协议，通过http响应头中的<code>Cache-control: max-age</code>的字段来设置CDN边缘节点数据缓存时间。</p>
+<h3 id="CDN的工作机制"><a href="#CDN的工作机制" class="headerlink" title="CDN的工作机制"></a>CDN的工作机制</h3><p>关于CDN缓存 ，在浏览器本地缓存失效后，浏览器会向CDN边缘节点发起请求。类似浏览器缓存，CDN边缘节点也存在着一套缓存机制。CDN边缘节点缓存策略因服务商不同而不同，但一般都会遵循http标准协议，通过http响应头中的<code>Cache-control: max-age</code>的字段来设置CDN边缘节点数据缓存时间。</p>
 <p>当客户端向CDN节点请求数据时，CDN节点会判断缓存数据是否过期，若缓存数据并没有过期，则直接将缓存数据返回给客户端；否则，CDN节点就会向源站发出回源请求，从源站拉取最新数据，更新本地缓存，并将最新数据返回给客户端。 CDN服务商一般会提供基于文件后缀、目录多个维度来指定CDN缓存时间，为用户提供更精细化的缓存管理。</p>
 <hr>
-<h1 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h1><h2 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h2><p>DNS: Domain Name System,即域名系统，负责将域名URL转化为服务器主机IP。</p>
-<h2 id="DNS的工作机制"><a href="#DNS的工作机制" class="headerlink" title="DNS的工作机制"></a>DNS的工作机制</h2><p>DNS查找流程：首先查看浏览器缓存是否存在，不存在则访问本机DNS缓存，再不存在则访问本地DNS服务器。所以DNS也是开销，通常浏览器查找一个给定URL的IP地址要花费20-120ms，在DNS查找完成前，浏览器不能从host那里下载任何东西。</p>
+<h1 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h1><h3 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h3><p>DNS: Domain Name System,即域名系统，负责将域名URL转化为服务器主机IP。</p>
+<h3 id="DNS的工作机制"><a href="#DNS的工作机制" class="headerlink" title="DNS的工作机制"></a>DNS的工作机制</h3><p>DNS查找流程：首先查看浏览器缓存是否存在，不存在则访问本机DNS缓存，再不存在则访问本地DNS服务器。所以DNS也是开销，通常浏览器查找一个给定URL的IP地址要花费20-120ms，在DNS查找完成前，浏览器不能从host那里下载任何东西。</p>
 <p>TTL(Time To Live)：表示查找返回的DNS记录包含的一个存活时间，过期则这个DNS记录将被抛弃。浏览器DNS缓存也有自己的过期时间，这个时间是独立于本机DNS缓存的，相对也比较短，例如chrome只有1分钟左右。</p>
 <hr>
 <h1 id="四种本地缓存机制"><a href="#四种本地缓存机制" class="headerlink" title="四种本地缓存机制"></a>四种本地缓存机制</h1><h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>cookie是比较老的前端缓存技术了，它的特点是：</p>
