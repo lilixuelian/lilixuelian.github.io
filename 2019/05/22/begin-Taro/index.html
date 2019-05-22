@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="diary,">
+  <meta name="keywords" content="Taro,config,">
 
 
 
@@ -79,18 +79,23 @@
 
 
 
-<meta name="description" content="2019.5.14 完成了博客的重新搭建和美化 用React完成了一个todolist demo 更加熟悉了indexOf()和splice()方法 Ubuntu的一些命令：12rm -rf xxxxx rm -rf xxxxx/*   -r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹  今天遇到github上传文件夹灰色无法打开的问题，解决方案  2019.5.15 优化">
-<meta name="keywords" content="diary">
+<meta name="description" content="安装react、taro之前的准备工作 安装node（装了node的同时会装npm） 安装cnpm（最好装一下cnpm，实际上不使用cnpm也可以） 安装合适版本的webpack  １、安装node以及cnpm的教程千万注意！！！打开windows终端之后默认的目录是C:/Users/hp，但是我在官网上下载的node保存在D:/Program Files/nodejs里面，设置环境变量的时候设置">
+<meta name="keywords" content="Taro,config">
 <meta property="og:type" content="article">
-<meta property="og:title" content="diary">
-<meta property="og:url" content="http://lilixuelian.github.io/2019/05/14/diary/index.html">
+<meta property="og:title" content="begin-Taro">
+<meta property="og:url" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="2019.5.14 完成了博客的重新搭建和美化 用React完成了一个todolist demo 更加熟悉了indexOf()和splice()方法 Ubuntu的一些命令：12rm -rf xxxxx rm -rf xxxxx/*   -r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹  今天遇到github上传文件夹灰色无法打开的问题，解决方案  2019.5.15 优化">
+<meta property="og:description" content="安装react、taro之前的准备工作 安装node（装了node的同时会装npm） 安装cnpm（最好装一下cnpm，实际上不使用cnpm也可以） 安装合适版本的webpack  １、安装node以及cnpm的教程千万注意！！！打开windows终端之后默认的目录是C:/Users/hp，但是我在官网上下载的node保存在D:/Program Files/nodejs里面，设置环境变量的时候设置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-15T09:18:51.339Z">
+<meta property="og:image" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/01.png">
+<meta property="og:image" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/02.png">
+<meta property="og:image" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/03.png">
+<meta property="og:image" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/05.png">
+<meta property="og:updated_time" content="2019-05-22T13:37:12.841Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="diary">
-<meta name="twitter:description" content="2019.5.14 完成了博客的重新搭建和美化 用React完成了一个todolist demo 更加熟悉了indexOf()和splice()方法 Ubuntu的一些命令：12rm -rf xxxxx rm -rf xxxxx/*   -r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹  今天遇到github上传文件夹灰色无法打开的问题，解决方案  2019.5.15 优化">
+<meta name="twitter:title" content="begin-Taro">
+<meta name="twitter:description" content="安装react、taro之前的准备工作 安装node（装了node的同时会装npm） 安装cnpm（最好装一下cnpm，实际上不使用cnpm也可以） 安装合适版本的webpack  １、安装node以及cnpm的教程千万注意！！！打开windows终端之后默认的目录是C:/Users/hp，但是我在官网上下载的node保存在D:/Program Files/nodejs里面，设置环境变量的时候设置">
+<meta name="twitter:image" content="http://lilixuelian.github.io/2019/05/22/begin-Taro/01.png">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://lilixuelian.github.io/2019/05/14/diary/">
+  <link rel="canonical" href="http://lilixuelian.github.io/2019/05/22/begin-Taro/">
 
 
 
 
 
-  <title>diary | Hexo</title>
+  <title>begin-Taro | Hexo</title>
   
 
 
@@ -268,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/diary/">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/22/begin-Taro/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lixuelian">
@@ -285,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">diary</h1>
+          <h1 class="post-title" itemprop="name headline">begin-Taro</h1>
         
 
         <div class="post-meta">
@@ -297,8 +302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T23:34:04+08:00">
-                2019-05-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T21:21:03+08:00">
+                2019-05-22
               </time>
             
 
@@ -335,20 +340,21 @@
       
 
       
-        <h2 id="2019-5-14"><a href="#2019-5-14" class="headerlink" title="2019.5.14"></a>2019.5.14</h2><ul>
-<li>完成了博客的重新搭建和美化</li>
-<li>用React完成了一个todolist demo</li>
-<li>更加熟悉了indexOf()和splice()方法</li>
-<li>Ubuntu的一些命令：<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -rf xxxxx </span><br><span class="line"><span class="keyword">rm</span> -rf xxxxx<span class="comment">/*</span></span><br></pre></td></tr></table></figure>
-</li>
+        <h4 id="安装react、taro之前的准备工作"><a href="#安装react、taro之前的准备工作" class="headerlink" title="安装react、taro之前的准备工作"></a>安装react、taro之前的准备工作</h4><ul>
+<li>安装node（装了node的同时会装npm）</li>
+<li>安装cnpm（最好装一下cnpm，实际上不使用cnpm也可以）</li>
+<li>安装合适版本的webpack</li>
 </ul>
-<p>-r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹</p>
+<h4 id="１、安装node以及cnpm的教程"><a href="#１、安装node以及cnpm的教程" class="headerlink" title="１、安装node以及cnpm的教程"></a>１、<a href="https://blog.csdn.net/wjnf012/article/details/80422313" target="_blank" rel="noopener">安装node以及cnpm的教程</a></h4><p>千万注意！！！打开windows终端之后默认的目录是C:/Users/hp，但是我在官网上下载的node保存在D:/Program Files/nodejs里面，设置环境变量的时候设置的是node，导致cnpm -v总出现不是内部命令的提示，实际上就是因为cnpm没有设置好环境变量！！！</p>
+<p><img src="/2019/05/22/begin-Taro/01.png" alt="在这里插入图片描述"><br>理想状态下的nodejs文件夹是这样的，保存npm和npm.cmd，以及cnpm和cnpm.cmd这两种后缀名的文件，包括我下载的别的内容也如此：<img src="/2019/05/22/begin-Taro/02.png" alt><br>包括文件本身及其.cmd后缀文件，然后它们相应的的文件夹保存在node_modules文件夹中<br><img src="/2019/05/22/begin-Taro/03.png" alt></p>
+<h4 id="2、装react运行时提示webpack版本过高"><a href="#2、装react运行时提示webpack版本过高" class="headerlink" title="2、装react运行时提示webpack版本过高"></a>2、装react运行时提示webpack版本过高</h4><p>所以重新下载了它要求的版本，然后继续提升webpack-dev-server版本过低，所以也重新下载了它要求的版本。然后才能够运行</p>
+<h4 id="3、无法自动安装项目依赖"><a href="#3、无法自动安装项目依赖" class="headerlink" title="3、无法自动安装项目依赖"></a>3、无法自动安装项目依赖</h4><p>taro安装项目依赖失败后手动安装npm install也不行，解决方法是安装cnpm</p>
+<h4 id="4、taro安装依赖成功后编译不成功"><a href="#4、taro安装依赖成功后编译不成功" class="headerlink" title="4、taro安装依赖成功后编译不成功"></a>4、taro安装依赖成功后编译不成功</h4><p><img src="/2019/05/22/begin-Taro/05.png" alt><br>关注taro不是内部命令，由前几次安装cnpm失败可知这是taro设置全局变量不成功，所以就有了上面nodejs文件夹里的格式，再windows上安装这些东西，最大的坑就是要设置全局变量，然后设置错误啊！！！！= = 有的人不需要设置系统直接给出了，有的倒霉蛋比如我就得一个一个设置，总而言之安装上方nodejs的文件夹格式是可以设置成功的</p>
+<h3 id="５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了"><a href="#５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了" class="headerlink" title="５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了"></a>５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>taro其实和react安装差不多，但是可能是taro它比较新所以不完善吗？？？它的错误提示一点都不明确，都是一些看不懂的内容，幸亏我是react、taro一起下，出现了同样看不懂的内容，react还提示了我看得懂的内容，比如我要下载Python，比如我webpack和webpack-dev-server版本不对等等。</p>
 <ul>
-<li>今天遇到github上传文件夹灰色无法打开的问题，<a href="https://blog.csdn.net/weixin_38927964/article/details/84201322" target="_blank" rel="noopener">解决方案</a></li>
-</ul>
-<h2 id="2019-5-15"><a href="#2019-5-15" class="headerlink" title="2019.5.15"></a>2019.5.15</h2><ul>
-<li>优化了昨天todolist的<a href="https://github.com/lilixuelian/JS-exercise/tree/master/todolist(react" target="_blank" rel="noopener">代码</a>/src)</li>
-<li>写lab</li>
+<li>这次在windows上安装最大的收获就是学会看错误提示了，一起看都不想看看也看不懂的内容，这次仔细瞅瞅发现还是可以看懂的，只是需要耐心。一定一定要仔细看它的错误提示！！！！它说not found在一个路径中，你就把这个文件放在它要的路径中，它说need xxx，你就下载个xxx，不要急着找教程，网上教程很可能没有你恰好遇到的问题</li>
+<li>经过配置taro、react、webpack、phaser我发现：版本问题是非常常见的，非常有可能你看的教程里复制人家的config里面是一个版本，但是你npm下载的是最近版本，配置的和你安装的不是一样的，所以经常出错</li>
+<li>最后配置的时候不要害怕不要怂不要总觉得很麻烦，多搞搞就会了</li>
 </ul>
 
       
@@ -372,7 +378,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/diary/" rel="tag"># diary</a>
+            <a href="/tags/Taro/" rel="tag"># Taro</a>
+          
+            <a href="/tags/config/" rel="tag"># config</a>
           
         </div>
       
@@ -385,8 +393,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/05/22/在github中如何通过Collaborators合作者共同开发项目/" rel="next" title="在github中如何通过Collaborators合作者共同开发项目">
+                <i class="fa fa-chevron-left"></i> 在github中如何通过Collaborators合作者共同开发项目
               </a>
             
           </div>
@@ -395,8 +403,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/22/cache/" rel="prev" title="cache">
-                cache <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/22/JavaScript调试/" rel="prev" title="JavaScript调试">
+                JavaScript调试 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -547,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-5-14"><span class="nav-number">1.</span> <span class="nav-text">2019.5.14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-5-15"><span class="nav-number">2.</span> <span class="nav-text">2019.5.15</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装react、taro之前的准备工作"><span class="nav-number">1.</span> <span class="nav-text">安装react、taro之前的准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#１、安装node以及cnpm的教程"><span class="nav-number">2.</span> <span class="nav-text">１、安装node以及cnpm的教程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、装react运行时提示webpack版本过高"><span class="nav-number">3.</span> <span class="nav-text">2、装react运行时提示webpack版本过高</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、无法自动安装项目依赖"><span class="nav-number">4.</span> <span class="nav-text">3、无法自动安装项目依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、taro安装依赖成功后编译不成功"><span class="nav-number">5.</span> <span class="nav-text">4、taro安装依赖成功后编译不成功</span></a></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了"><span class="nav-number"></span> <span class="nav-text">５、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.</span> <span class="nav-text">总结</span></a></li></ol></li></div>
             
 
           </div>
