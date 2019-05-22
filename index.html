@@ -264,6 +264,204 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/22/cache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/22/cache/" itemprop="url">cache</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T08:45:00+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="web缓存"><a href="#web缓存" class="headerlink" title="web缓存"></a>web缓存</h2><h4 id="数据库缓存"><a href="#数据库缓存" class="headerlink" title="数据库缓存"></a>数据库缓存</h4><h4 id="服务器缓存"><a href="#服务器缓存" class="headerlink" title="服务器缓存"></a>服务器缓存</h4><ul>
+<li>代理服务器缓存</li>
+<li>CDN缓存<h4 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h4></li>
+<li>http缓存</li>
+<li>indexDB</li>
+<li>cookie</li>
+<li>localstorage</li>
+</ul>
+<hr>
+<h2 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h2><p>###　什么是浏览器缓存<br>简单来说，浏览器缓存就是把一个已经请求过的Web资源（如html页面，图片，js，数据等）拷贝一份副本储存在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载网页，而是直接使用本地缓存的网页。只有当网站明确标识资源已经更新，浏览器才会再次下载网页。</p>
+<h3 id="为什么使用缓存"><a href="#为什么使用缓存" class="headerlink" title="为什么使用缓存"></a>为什么使用缓存</h3><h4 id="1、减少网络带宽消耗"><a href="#1、减少网络带宽消耗" class="headerlink" title="1、减少网络带宽消耗"></a>1、减少网络带宽消耗</h4><p>无论对于网站运营者或者用户，带宽都代表着金钱，过多的带宽消耗，只会便宜了网络运营商。当Web缓存副本被使用时，只会产生极小的网络流量，可以有效的降低运营成本。</p>
+<h4 id="2、降低服务器压力"><a href="#2、降低服务器压力" class="headerlink" title="2、降低服务器压力"></a>2、降低服务器压力</h4><p>　　给网络资源设定有效期之后，用户可以重复使用本地的缓存，减少对源服务器的请求，间接降低服务器的压力。同时，搜索引擎的爬虫机器人也能根据过期机制降低爬取的频率，也能有效降低服务器的压力。</p>
+<h4 id="3、减少网络延迟，加快页面打开速度"><a href="#3、减少网络延迟，加快页面打开速度" class="headerlink" title="3、减少网络延迟，加快页面打开速度"></a>3、减少网络延迟，加快页面打开速度</h4><p>　　带宽对于个人网站运营者来说是十分重要，而对于大型的互联网公司来说，可能有时因为钱多而真的不在乎。那Web缓存还有作用吗？答案是肯定的，对于最终用户，缓存的使用能够明显加快页面打开速度，达到更好的体验。</p>
+<h3 id="浏览器端的缓存规则"><a href="#浏览器端的缓存规则" class="headerlink" title="浏览器端的缓存规则"></a>浏览器端的缓存规则</h3><p>对于浏览器端的缓存来讲，这些规则是在HTTP协议头和HTML页面的Meta标签中定义的。他们分别从新鲜度和校验值两个维度来规定浏览器是否可以直接使用缓存中的副本，还是需要去源服务器获取更新的版本。</p>
+<ul>
+<li><strong>新鲜度（过期机制）</strong>：也就是缓存副本有效期。一个缓存副本必须满足以下条件，浏览器会认为它是有效的，足够新的：<ol>
+<li>含有完整的过期时间控制头信息（HTTP协议报头），并且仍在有效期内；</li>
+<li>浏览器已经使用过这个缓存副本，并且在一个会话中已经检查过新鲜度；</li>
+</ol>
+</li>
+</ul>
+<p>满足以上两个情况的一种，浏览器会直接从缓存中获取副本并渲染。</p>
+<ul>
+<li><strong>校验值（验证机制）</strong>：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签Etag（Entity Tag），它可以用来作为浏览器再次请求过程的校验标识。如过发现校验标识不匹配，说明资源已经被修改或过期，浏览器需求重新获取资源内容。</li>
+</ul>
+<h3 id="如何判断缓存新鲜度"><a href="#如何判断缓存新鲜度" class="headerlink" title="如何判断缓存新鲜度"></a>如何判断缓存新鲜度</h3><p>Web服务器通过2种方式来判断浏览器缓存是否是最新的。</p>
+<ul>
+<li><p>第一种， 浏览器把缓存文件的最后修改时间通过 header ”If-Modified-Since“来告诉Web服务器。</p>
+</li>
+<li><p>第二种， 浏览器把缓存文件的ETag, 通过header “If-None-Match”, 来告诉Web服务器。</p>
+</li>
+</ul>
+<h3 id="浏览器缓存的返回值"><a href="#浏览器缓存的返回值" class="headerlink" title="浏览器缓存的返回值"></a>浏览器缓存的返回值</h3><ul>
+<li><p><strong>200 from memory cache</strong> 不访问服务器，直接读缓存，从内存中读取缓存。此时的数据时缓存到内存中的，当kill进程后，也就是浏览器关闭以后，数据将不存在。但是这种方式只能缓存派生资源</p>
+</li>
+<li><p><strong>200 from disk cache</strong> 不访问服务器，直接读缓存，从磁盘中读取缓存，当kill进程时，数据还是存在。这种方式也只能缓存派生资源</p>
+</li>
+<li><p><strong>304 Not Modified</strong> 访问服务器，发现数据没有更新，服务器返回此状态码。然后从缓存中读取数据。</p>
+</li>
+</ul>
+<h3 id="三级缓存原理"><a href="#三级缓存原理" class="headerlink" title="三级缓存原理"></a>三级缓存原理</h3><pre><code>(1)  先去内存看，如果有，直接加载
+
+(2)  如果内存没有，择取硬盘获取，如果有直接加载
+
+(3)  如果硬盘也没有，那么就进行网络请求
+
+(4)  加载到的资源缓存到硬盘和内存
+</code></pre><h3 id="缓存位置"><a href="#缓存位置" class="headerlink" title="缓存位置"></a>缓存位置</h3><pre><code>Service Worker
+Memory Cache
+Disk Cache
+Push Cache
+</code></pre><h4 id="1、Service-Worker"><a href="#1、Service-Worker" class="headerlink" title="1、Service Worker"></a>1、Service Worker</h4><p>　　Service Worker 是运行在浏览器背后的独立线程，一般可以用来实现缓存功能。使用 Service Worker的话，传输协议必须为 HTTPS。因为 Service Worker 中涉及到请求拦截，所以必须使用 HTTPS 协议来保障安全。Service Worker 的缓存与浏览器其他内建的缓存机制不同，它可以让我们自由控制缓存哪些文件、如何匹配缓存、如何读取缓存，并且缓存是持续性的。</p>
+<p>　　Service Worker 实现缓存功能一般分为三个步骤：首先需要先注册 Service Worker，然后监听到 install 事件以后就可以缓存需要的文件，那么在下次用户访问的时候就可以通过拦截请求的方式查询是否存在缓存，存在缓存的话就可以直接读取缓存文件，否则就去请求数据。</p>
+<p>　　当 Service Worker 没有命中缓存的时候，我们需要去调用 fetch 函数获取数据。也就是说，如果我们没有在 Service Worker 命中缓存的话，会根据缓存查找优先级去查找数据。</p>
+<h4 id="２、Memory-Cache"><a href="#２、Memory-Cache" class="headerlink" title="２、Memory Cache"></a>２、Memory Cache</h4><p>Memory Cache 也就是内存中的缓存，主要包含的是当前中页面中已经抓取到的资源,例如页面上已经下载的样式、脚本、图片等。读取内存中的数据肯定比磁盘快,内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。 一旦我们关闭 Tab 页面，内存中的缓存也就被释放了。</p>
+<p>那么既然内存缓存这么高效，我们是不是能让数据都存放在内存中呢？<br>这是不可能的。计算机中的内存一定比硬盘容量小得多，操作系统需要精打细算内存的使用，所以能让我们使用的内存必然不多。</p>
+<p>当我们访问过页面以后，再次刷新页面，可以发现很多数据都来自于内存缓存</p>
+<h4 id="３、Disk-Cache"><a href="#３、Disk-Cache" class="headerlink" title="３、Disk Cache"></a>３、Disk Cache</h4><p>Disk Cache 也就是存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。</p>
+<p>在所有浏览器缓存中，Disk Cache 覆盖面基本是最大的。它会根据 HTTP Herder 中的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据。绝大部分的缓存都来自 Disk Cache，关于 HTTP 的协议头中的缓存字段，我们会在下文进行详细介绍。</p>
+<hr>
+<p><strong>浏览器会把哪些文件丢进内存中？哪些丢进硬盘中？</strong><br> 关于这点，网上说法不一，不过以下观点比较靠得住：</p>
+<ul>
+<li>对于大文件来说，大概率是不存储在内存中的，反之优先</li>
+<li>当前系统内存使用率高的话，文件优先存储进硬盘</li>
+</ul>
+<hr>
+<p>####　４、Push Cache<br>当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在Chrome浏览器中只有5分钟左右，同时它也并非严格执行HTTP头中的缓存指令。</p>
+<h3 id="缓存过程分析"><a href="#缓存过程分析" class="headerlink" title="缓存过程分析"></a>缓存过程分析</h3><p><strong>如果以上四种缓存都没有命中的话，那么只能发起请求来获取资源了。</strong></p>
+<p>那么为了性能上的考虑，大部分的接口都应该选择好缓存策略，通常浏览器缓存策略分为两种：<strong>强缓存和协商缓存</strong>，并且缓存策略都是通过设置 HTTP Header 来实现的。</p>
+<hr>
+<h4 id="在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文"><a href="#在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文" class="headerlink" title="在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文"></a>在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文</h4><p><strong>HTTP报文</strong>就是浏览器和服务器间通信时发送及响应的数据块。<br>浏览器向服务器请求数据，发送请求(request)报文；服务器向浏览器返回数据，返回响应(response)报文。<br>~~~~<br>报文信息主要分为两部分</p>
+<ul>
+<li>包含属性的首部(header)————————–附加信息（cookie，缓存信息等）与缓存相关的规则信息，均包含在header中</li>
+<li>包含数据的主体部分(body)———————–HTTP请求真正想要传输的部分</li>
+</ul>
+<hr>
+<h4 id="继续介绍缓存规则："><a href="#继续介绍缓存规则：" class="headerlink" title="继续介绍缓存规则："></a>继续介绍缓存规则：</h4><p>为方便大家理解，我们认为浏览器存在一个<strong>缓存数据库</strong>,用于存储缓存信息。<br>在客户端第一次请求数据时，此时缓存数据库中没有对应的缓存数据，需要请求服务器，服务器返回后，将数据存储至缓存数据库中。<br>HTTP缓存有多种规则，根据是否需要重新向服务器发起请求来分类，我将其分为两大类(强制缓存，对比缓存)<br>在详细介绍这两种规则之前，先通过时序图的方式，让大家对这两种规则有个简单了解。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/diary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -345,6 +543,10 @@
 <p>-r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹</p>
 <ul>
 <li>今天遇到github上传文件夹灰色无法打开的问题，<a href="https://blog.csdn.net/weixin_38927964/article/details/84201322" target="_blank" rel="noopener">解决方案</a></li>
+</ul>
+<h2 id="2019-5-15"><a href="#2019-5-15" class="headerlink" title="2019.5.15"></a>2019.5.15</h2><ul>
+<li>优化了昨天todolist的<a href="https://github.com/lilixuelian/JS-exercise/tree/master/todolist(react" target="_blank" rel="noopener">代码</a>/src)</li>
+<li>写lab</li>
 </ul>
 
           
@@ -870,7 +1072,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -892,7 +1094,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
