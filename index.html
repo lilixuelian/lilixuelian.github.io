@@ -264,6 +264,560 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/23/git工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/23/git工作流程/" itemprop="url">git工作流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T16:22:05+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="/2019/05/23/git工作流程/01.png" alt></p>
+<h3 id="具体工作流程"><a href="#具体工作流程" class="headerlink" title="具体工作流程"></a>具体工作流程</h3><ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/23/git分支管理机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/23/git分支管理机制/" itemprop="url">git分支管理机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T15:37:17+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>这篇文章主要介绍一下git的分支管理机制，用形象的图片来表明git的分支是如何来实现的。实际上，git分支管理机制主要依赖于<strong>指针的变化</strong>：</p>
+<h3 id="分支的创建："><a href="#分支的创建：" class="headerlink" title="分支的创建："></a>分支的创建：</h3><p>即创建一个指向HEAD当前<strong>指向的分支、当前版本的</strong>指针。<br><img src="/2019/05/23/git分支管理机制/01.png" alt><br>说明：此时<code>HEAD</code>指向<code>master分支</code>的<code>f30ab</code>版本，那么新创建的<code>testing分支</code>的指针也会指向<code>master分支</code>的<code>f30ab</code>版本，实际上是创建的分支的指针会指向<code>HEAD指针</code>指向的分支所在的版本</p>
+<h3 id="分支的切换："><a href="#分支的切换：" class="headerlink" title="分支的切换："></a>分支的切换：</h3><p><img src="/2019/05/23/git分支管理机制/02.png" alt><br> 说明：切换分支时，仅仅是切换一下<code>HEAD指针</code>的指向，从<strong>原分支指</strong>向<strong>想切换的分支</strong></p>
+<h3 id="版本的提交"><a href="#版本的提交" class="headerlink" title="版本的提交"></a>版本的提交</h3><p><img src="/2019/05/23/git分支管理机制/03.png" alt><br> 说明：若此时在<code>testing分支</code>上提交了版本，则只会使该分支的指针向后移动，<strong>不会影响其他分支</strong>，如上图所示，其他分支的指针指向并没有发生变化</p>
+<h3 id="冲突的产生"><a href="#冲突的产生" class="headerlink" title="冲突的产生"></a>冲突的产生</h3><p><img src="/2019/05/23/git分支管理机制/04.png" alt><br>说明：在<code>testing分支</code>修改后，再将<code>HEAD</code>切换至<code>master</code>，然后在<code>master</code>上修改相同的文件，然后再<code>master分支</code>上提交，就会形成下面的局面：这时就有可能产生冲突，这合并版本的时候就需要解决冲突。<br><img src="/2019/05/23/git分支管理机制/05.png" alt></p>
+<h3 id="和SVN的比较"><a href="#和SVN的比较" class="headerlink" title="和SVN的比较"></a>和SVN的比较</h3><p>  SVN在创建分支的时候是将所有文件复制一份，而git仅仅是创建一个指向当前版本的指针，因此效率很高；Git中分支之间的切换仅仅是HEAD指针的变化，效率也很高；<br><strong>综上</strong>：Git的操作很依赖于<strong>HEAD指针的变化</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/22/github/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/22/github/" itemprop="url">github</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T23:10:24+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>摘要</strong><br>在这段时间和队友合作写一个项目的过程中，合代码一直是我学习过程中迈不过去的大石头，绕也绕不过去的那种，这次痛定思痛决定研究一下git的原理，它的那些命令到底对应着git内部的哪些操作？它的工作原理是什么？为什么合并冲突有时候把我自己本地的代码毁掉了？如何正确高效地合并冲突？开发的时候应该如何进行多人合作？它的哪些好用的命令我还没有使用过？</p>
+<p>下面我将就以下几个方面来完成这次分享。</p>
+<ul>
+<li>第一，git的基本介绍（它是什么它有哪些基本性质等）</li>
+<li>第二，git的基本工作原理</li>
+<li>第三，通过一个解决冲突的案例来巩固对git基本工作原理的理解</li>
+<li>第四，开发过程中分支的作用及其工作原理</li>
+<li>第五，多人合作共同开发的工作流程</li>
+<li>第六，如何进行版本控制</li>
+</ul>
+<hr>
+<h2 id="1、git的基本介绍"><a href="#1、git的基本介绍" class="headerlink" title="1、git的基本介绍"></a>1、git的基本介绍</h2><p><strong>目录</strong></p>
+<ul>
+<li>git是什么</li>
+<li>git能够解决哪些问题</li>
+<li>git的一些基本性质</li>
+</ul>
+<h3 id="1-1-git是什么？"><a href="#1-1-git是什么？" class="headerlink" title="1.1 git是什么？"></a>1.1 git是什么？</h3><p>git是一种<strong>分布式版本控制系统</strong></p>
+<h4 id="1-1-1-什么是版本控制？"><a href="#1-1-1-什么是版本控制？" class="headerlink" title="1.1.1 什么是版本控制？"></a>1.1.1 什么是版本控制？</h4><p><strong>版本控制</strong>这个说法多少有一点抽象。事实上，版本控制这件事儿我们一直在做，只是平时不这么称呼。举一个栗子，boss让你写一个策划案，你先完成了一稿，之后又有了一些新的想法，但是并不确定新的想法是否能得到boss的认可，于是你保存了一个初稿，之后在初稿的基础上另存了一个文件，做了部分修改完成了一个修改稿。OK，这时你的策划案就有了两个版本——初稿和修改稿。如果boss对修改稿不满意，你可以很轻易的把初稿拿出来交差。<br> 在这个简单的过程中，你已经执行了一个简单的版本控制操作——把文档保存为初稿和修改稿的过程就是<strong>版本控制</strong>。<br>学术点说，版本控制就是对文件变更过程的管理。说白了，版本控制就是要<strong>把一个文件或一些文件的各个版本按一定的方式管理起来</strong>，目的是需要用到某个版本的时候可以随时拿出来</p>
+<h4 id="1-1-2-为什么是分布式？"><a href="#1-1-2-为什么是分布式？" class="headerlink" title="1.1.2 为什么是分布式？"></a>1.1.2 为什么是分布式？</h4><p>这里的<strong>“分布式”</strong>是相对于<strong>“集中式”</strong>来说的。把数据集中保存在服务器节点，所有的客户节点都从<strong>服务节点</strong>获取数据的版本控制系统叫做<strong>集中式版本控制系统</strong>，比如svn就是典型的集中式版本控制系统。<br>与之相对，Git的数据不止保存在服务器上，同时也完整的保存在<strong>本地计算机</strong>上，所以我们称Git为<strong>分布式版本控制系统。</strong><br>Git的这种特性带来许多便利，比如你可以在完全离线的情况下使用Git，随时随地提交项目更新，而且你不必为单点故障过分担心，即使服务器宕机或数据损毁，也可以用任何一个节点上的数据恢复项目，因为每一个开发节点都保存着完整的项目文件镜像。</p>
+<h3 id="1-2-为什么要使用git？"><a href="#1-2-为什么要使用git？" class="headerlink" title="1.2 为什么要使用git？"></a>1.2 为什么要使用git？</h3><p>就像上文举的例子一样，在未接触版本控制系统之前，大多人会通过保存项目或文件的备份来达到版本控制的目的。通常你的文件或文件夹名会设置成“XXX-v1.0”、“XXX-v2.0”等。</p>
+<p>这是一种简单的办法，但过于简单。这种方式无法详细记录版本附加信息，难以应付复杂项目或长期更新的项目，缺乏版本控制约定，对协作开发无能为力。如果你不慎使用了这种方式，那么稍稍过一段时间你就会发现连自己都不知道每个版本间的区别，版本控制形同虚设。</p>
+<ul>
+<li>能够对文件版本控制和多人协作开发</li>
+<li>拥有强大的分支特性，所以能够灵活地以不同的工作流协同开发</li>
+<li>分布式版本控制系统，即使协作服务器宕机，也能继续提交代码或文件到本地仓库，当协作服务器恢复正常工作时，再将本地仓库同步到远程仓库。</li>
+<li>当团队中某个成员完成某个功能时，通过pull request操作来通知其他团队成员，其他团队成员能够review code后再合并代码。</li>
+</ul>
+<p>诸如此类，数不胜数。然而实现这些功能的基础是对<strong>文件变更过程的存储</strong>。如果我们能抓住这个根本，提纲挈领的学习git，会事半功倍。</p>
+<p>所以，如果问“Git能够解决哪些问题？”我们可以简单的回答：Git解决了版本控制方面的很多问题，但最核心的是它很好的解决了版本状态存储（即文件变更过程存储）的问题。</p>
+<h3 id="1-3-git的一些基本性质"><a href="#1-3-git的一些基本性质" class="headerlink" title="1.3 git的一些基本性质"></a>1.3 git的一些基本性质</h3><h3 id="1-3-1-直接记录快照，而非差异比较"><a href="#1-3-1-直接记录快照，而非差异比较" class="headerlink" title="1.3.1 直接记录快照，而非差异比较"></a>1.3.1 直接记录快照，而非差异比较</h3><p>  Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git <strong>对待数据的方法</strong>。 概念上来区分，其它大部分系统以<strong>文件变更列表</strong>的方式存储信息。 这类系统(CVS、Subversion、Perforce、Bazaar 等等)将它们保存的信息看作是一组基本文件和每个文件随时间逐步累积的<strong>差异</strong>。存储每个文件与初始版本的<strong>差异</strong>，如下图所示 -<br>  <img src="/2019/05/22/github/05.png" alt><br>   Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是<strong>对小型文件系统的一组快照</strong>。 每次提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 快照流。如下图所示 -<br>    <img src="/2019/05/22/github/06.png" alt><br>    这是 Git 与几乎所有其它版本控制系统的重要区别。 因此 Git 重新考虑了以前每一代版本控制系统延续下来的诸多方面。 Git 更像是一个小型的文件系统，提供了许多以此为基础构建的超强工具，而不只是一个简单的 VCS。 稍后我们在 Git 分支讨论 Git 分支管理时，将探究这种方式对待数据所能获得的益处。</p>
+<h3 id="1-3-2-近乎所有操作都是本地执行"><a href="#1-3-2-近乎所有操作都是本地执行" class="headerlink" title="1.3.2 近乎所有操作都是本地执行"></a>1.3.2 近乎所有操作都是本地执行</h3><p>在 Git 中的绝大多数操作都只需要访问<strong>本地文件和资源</strong>，一般不需要来自网络上其它计算机的信息。 如果你习惯于所有操作都有网络延时开销的集中式版本控制系统，Git 在这方面会让你感到速度之神赐给了 Git 超凡的能量。 因为你在本地磁盘上就有项目的完整历史，所以大部分操作看起来瞬间完成。<br>    举个例子，要浏览项目的历史，Git 不需外连到服务器去获取历史，然后再显示出来——它只需直接从本地数据库中读取。 你能立即看到项目历史。 如果想查看当前版本与一个月前的版本之间引入的修改，Git 会查找到一个月前的文件做一次本地的差异计算，而不是由远程服务器处理或从远程服务器拉回旧版本文件再来本地处理。<br>    这也意味着你离线或者没有 VPN 时，几乎可以进行任何操作。 如你在飞机或火车上想做些工作，你能愉快地提交，直到有网络连接时再上传。 如你回家后 VPN 客户端不正常，你仍能工作。 使用其它系统，做到如此是不可能或很费力的。 比如，用 Perforce，你没有连接服务器时几乎不能做什么事；用 Subversion 和 CVS，你能修改文件，但不能向数据库提交修改(因为你的本地数据库离线了)。 这看起来不是大问题，但是你可能会惊喜地发现它带来的巨大的不同。</p>
+<h3 id="1-3-3-git保证完整性"><a href="#1-3-3-git保证完整性" class="headerlink" title="1.3.3 git保证完整性"></a>1.3.3 git保证完整性</h3><p>Git 中所有数据在存储前都计算校验和，然后以校验和来引用。 这意味着<strong>不可能在 Git 不知情时更改任何文件内容或目录内容</strong>。 这个功能建构在 Git 底层，是构成 Git 哲学不可或缺的部分。 若你在传送过程中丢失信息或损坏文件，Git 就能发现。 </p>
+<h3 id="1-3-4-git一般只添加数据"><a href="#1-3-4-git一般只添加数据" class="headerlink" title="1.3.4 git一般只添加数据"></a>1.3.4 git一般只添加数据</h3><p> 你执行的 Git 操作，几乎只往 Git 数据库中增加数据。 <strong>很难让 Git 执行任何不可逆操作，或者让它以任何方式清除数据。</strong> 同别的 VCS 一样，未提交更新时有可能丢失或弄乱修改的内容；但是一旦你提交快照到 Git 中，就难以再丢失数据，特别是如果你定期的推送数据库到其它仓库的话。<br>这使得我们使用 Git 成为一个安心愉悦的过程，因为我们深知可以尽情做各种尝试，而没有把事情弄糟的危险。 更深度探讨 Git 如何保存数据及恢复丢失数据的话题，请参考撤消操作。</p>
+<h2 id="2、git工作流程"><a href="#2、git工作流程" class="headerlink" title="2、git工作流程"></a>2、git工作流程</h2><p><strong>目录</strong></p>
+<ul>
+<li>文件在被git管理过程中所处的四个阶段</li>
+<li>文件的三种状态</li>
+<li><p>基本的git工作流程</p>
+<h3 id="2-1-文件在被git管理过程中所处的四个阶段"><a href="#2-1-文件在被git管理过程中所处的四个阶段" class="headerlink" title="2.1 文件在被git管理过程中所处的四个阶段"></a>2.1 文件在被git管理过程中所处的四个阶段</h3><p><img src="/2019/05/22/github/05.jpeg" alt><br><img src="/2019/05/22/github/02.png" alt></p>
+</li>
+<li><p>工作目录</p>
+</li>
+<li>index(又称为暂存区)</li>
+<li>本地仓库</li>
+<li>远程仓库。</li>
+</ul>
+<p>从时间先后来讲:</p>
+<ul>
+<li>工作目录的内容是你当前看到的，也是最新的；</li>
+<li>index区标记了你当前工作目录中，哪些内容是被git管理的；</li>
+<li>而本地仓库保存了对象被提交 过的各个版本，比起工作目录和暂存区的内容，它要更旧一些；</li>
+<li><p>远程仓库是本地仓库的异地备份，远程仓库的内容可能被分布在多个地点的处于协作关系的本地仓库 修改，因此它可能与本地仓库同步，也可能不同步，但是它的内容是最旧的。</p>
+</li>
+<li><p>任何对象都是在工作目录中诞生和被修改；</p>
+</li>
+<li>任何修改都是从进入index区才开始被 版本控制；</li>
+<li>只有把修改提交到本地仓库，该修改才能在仓库中留下痕迹；</li>
+<li>而要与协作者分享本地的修改，可以把它们push到远程仓库来共享。</li>
+</ul>
+<p>图最上方的 add、commit、push等，展示了git仓库的产生过程。反过来，我们可以从远程历史仓库中获得本地仓库的最后一个版本，clone到本地，从本 地检出对象的各个版本到index暂存区或工作目录中，从而实现任何对象或整个仓库的任意阶段状态的”回滚”。</p>
+<p>一开始接触这些概念可能比较绕，其实在git入门阶段，可以先抛开远程仓库不看，只了解管理本地仓库的”3棵树”就够了。如下图：</p>
+<p><img src="/2019/05/22/github/03.jpeg" alt></p>
+<h4 id="2-2-文件的三种状态"><a href="#2-2-文件的三种状态" class="headerlink" title="2.2 文件的三种状态"></a>2.2 文件的三种状态</h4><p>对任何一个文件，在git内都有三种状态:</p>
+<ul>
+<li>已提交(committed)：表示该文件已经被安全的保存在本地数据库中了</li>
+<li>已修改(modified)：表示修改了某个文件，但还没有提交保存</li>
+<li>已暂存(staged)：表示把已修改的文件放在下次提交时要保存的清单中<br><img src="/2019/05/22/github/04.png" alt></li>
+</ul>
+<p>我们可以从文件所处的位置来判断状态：</p>
+<ul>
+<li>Git 目录中保存着的特定版本文件—–&gt;已提交状态</li>
+<li>作了修改并已放入暂存区域—–&gt;已暂存状态</li>
+<li>自上次取出后，作了修改但还没有放到暂存区域—–&gt;已修改状态</li>
+</ul>
+<h3 id="2-3-基本的-Git-工作流程如下："><a href="#2-3-基本的-Git-工作流程如下：" class="headerlink" title="2.3 基本的 Git 工作流程如下："></a>2.3 基本的 Git 工作流程如下：</h3><ol>
+<li>在工作目录中修改文件。</li>
+<li>暂存文件，将文件的快照放入暂存区域。</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
+</ol>
+<h2 id="3、通过一个解决冲突的案例来巩固对git基本工作原理的理解"><a href="#3、通过一个解决冲突的案例来巩固对git基本工作原理的理解" class="headerlink" title="3、通过一个解决冲突的案例来巩固对git基本工作原理的理解"></a>3、通过一个解决冲突的案例来巩固对git基本工作原理的理解</h2><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>提交代码到远程仓库</li>
+<li>将远程仓库代码更新到本地</li>
+<li>更新到本地仓库时， 出现冲突，解决冲突<h3 id="3-1-提交代码到远程仓库"><a href="#3-1-提交代码到远程仓库" class="headerlink" title="3.1 提交代码到远程仓库"></a>3.1 提交代码到远程仓库</h3>将一个新建的工程提交至远程仓库，关键的git指令如下：<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git <span class="keyword">add</span><span class="bash"> README.md</span></span><br><span class="line">git commit -m <span class="string">"首次提交代码"</span></span><br><span class="line">git remote <span class="keyword">add</span><span class="bash"> origin https://github.com/wteam-xq/testGit.git</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>指令解释</strong></p>
+<ul>
+<li><p><code>git init</code> 表示在当前的项目目录中生成本地的git管理；</p>
+</li>
+<li><p><code>git add README.md</code> 将“README.md”文件保存至缓存区，实际开发中一般使用 <code>git add -A</code>，使用-A:将新增、删除、修改的文件改动全保存至缓存区；</p>
+</li>
+<li><p><code>git commit -m &quot;first commit&quot;</code> 将代码从缓存区保存至本地仓库，实际开发中一般使用<code>git commit -am &quot;说明的文字&quot;</code>，使用 -a：如果没文件更改操作（增、删、改名）就可以省略git add指令；</p>
+</li>
+<li><p><code>git remote add origin https://github.com/wteam-xq/testGit.git</code>将本地仓库与指定的远程仓库创建 联系；</p>
+</li>
+<li><p><code>push -u origin master</code> 将本地仓库代码推送至远程仓库<br><strong>原理图</strong><br><img src="/2019/05/22/github/11.jpg" alt></p>
+</li>
+</ul>
+<h3 id="3-2-将远程仓库代码更新到本地"><a href="#3-2-将远程仓库代码更新到本地" class="headerlink" title="3.2 将远程仓库代码更新到本地"></a>3.2 将远程仓库代码更新到本地</h3><p>首先我们新建一文件夹：copyTestGit，进入该文件夹后使用git 指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span></span><br></pre></td></tr></table></figure></p>
+<p>指令执行完毕后， 就在该文件夹下生成一份副本啦<br><strong>原理图</strong><br><img src="/2019/05/22/github/12.jpg" alt><br>接下来， 讨论<code>git pull</code>、 <code>git fetch</code> 、 <code>git merge</code>的关系<br>先抛简单结论:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure>
+<p>等同于下面命令<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git <span class="keyword">merge</span></span><br></pre></td></tr></table></figure></p>
+<p>实际项目：我们在testGit工程中修改README.md,然后更新、提交下代码 执行以下git 指令(日常使用中会用<code>git status</code>看看是否有文件需要<code>git add</code>)：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> -am <span class="string">'update readme.md'</span></span><br><span class="line">git push origin <span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>原理图</strong><br><img src="/2019/05/22/github/13.jpg" alt><br>远程仓库代码更新后， 我们进入另一本地仓库：copyTestGit\testGit，将远程仓库的代码更新至该本地仓库。</p>
+<p>在该目录下输入以下git指令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch </span><br><span class="line">git <span class="keyword">merge</span> origin/<span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
+<p>日常使用图方便一般都是直接：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
+<p>以上指令的详细探讨请看 少用pull,多用fetch 和 merge</p>
+<p>（注意: 本文注重git工作原理图不考虑多分支情况，且使用了git clone所以副本工程已经跟主分支建立了追踪关系，所以’pull’ ‘fetch’ 后都不接分支代码 ）</p>
+<p><strong>以上指令别的原理图</strong><br><img src="/2019/05/22/github/14.jpg" alt></p>
+<h3 id="3-3-更新到本地仓库时出现冲突"><a href="#3-3-更新到本地仓库时出现冲突" class="headerlink" title="3.3 更新到本地仓库时出现冲突"></a>3.3 更新到本地仓库时出现冲突</h3><p>首先在本地修改文件，现在副本工程修改完了代码打算提交，提交前先将远程仓库最新代码更新至本地仓库, 惯例使用指令:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
+<p>指令执行之后会发现以下<strong>冲突提示</strong>：<br><img src="/2019/05/22/github/15.jpg" alt><br>出现以上提示， 说明本次更新代码失败；主要在于本地工作区间跟远程仓库的新代码冲突了， <strong>图解</strong>如下：<br><img src="/2019/05/22/github/16.jpg" alt><br>接下来，有两种方式处理冲突: 放弃本地修改或 解决冲突后提交本地修改</p>
+<h4 id="3-3-1-放弃本地修改"><a href="#3-3-1-放弃本地修改" class="headerlink" title="3.3.1 放弃本地修改"></a>3.3.1 放弃本地修改</h4><p>放弃本地修改意味着将远程仓库的代码完全覆盖本地仓库以及本地工作区间， 如果对git的指令不熟悉那大可以将本地工程完全删除，然后再重新拷贝一次（<code>git clone</code>）。</p>
+<p>当然， git如此强大没必要用这么原始的方法，可以让本地仓库代码覆盖本地修改，然后更新远程仓库代码； </p>
+<p>本地仓库代码完全覆盖本地工作区间，具体指令如下：<br><figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout head .</span><br></pre></td></tr></table></figure></p>
+<p>(注意： 别遗漏 “head” 后的 “ .” )</p>
+<p>然后更新远程仓库的代码就不会出现冲突了:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>原理图</strong>如下：<br><img src="/2019/05/22/github/17.jpg" alt></p>
+<h4 id="3-3-2-解决冲突后提交本地修改"><a href="#3-3-2-解决冲突后提交本地修改" class="headerlink" title="3.3.2 解决冲突后提交本地修改"></a>3.3.2 解决冲突后提交本地修改</h4><p>覆盖本地代码解决冲突方法适合不太懂git的菜鸟， 像我这种git老鸟（其实并不是(￢_￢)）当然用更高级的git指令解决冲突。</p>
+<p>细心的同学或许已发现，缓存区 除了开始出现外，后续提交代码、更新代码篇章都在打酱油；终于，这次冲突解决事件， 它将会是主角!</p>
+<p>解决冲突后提交本地修改的思路大概如下：</p>
+<p>将本地修改的代码放在缓存区， 然后从远程仓库拉取最新代码，拉取成功后再从缓存区将修改的代码取出， 这样最新代码跟本地修改的代码就会混杂在一起， 手工解决冲突后， 提交解决冲突后的代码。</p>
+<p><strong>原理图</strong>：<br><img src="/2019/05/22/github/18.jpg" alt><br><img src="/2019/05/22/github/19.jpg" alt><br>对应到我们实际项目中， 进入 copyTestGit/testGit 执行指令<code>git pull</code>出现 (重回到上述冲突场景)<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>Your local changes to the following files would be overwritten by merge:</span><br><span class="line">        README.md</span><br><span class="line">Please, commit your changes or stash them before you can merge.</span><br><span class="line">Aborting</span><br></pre></td></tr></table></figure></p>
+<p>将本地修改放入缓存区(成功后本地工作区间的代码跟本地仓库代码会同步)， 具体指令：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git stash</span></span><br></pre></td></tr></table></figure></p>
+<p>从远程仓库获取最新代码，具体指令：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
+<p>然后， 取出本地修改的代码， 具体指令:<br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash <span class="keyword">pop</span></span><br></pre></td></tr></table></figure></p>
+<p>然后， git 自动合并冲突失败， 冲突的代码就很清晰的展现在我们面前了，手动解决冲突之后告诉git， 这个文件（README.md）的冲突 已经解决:<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> README.md</span></span><br></pre></td></tr></table></figure></p>
+<p>提交代码（细节参考前述流程）：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> -am <span class="string">'终于解决冲突啦！'</span></span><br><span class="line">git push origin <span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
+<p>于是本地有冲突的代码就提交成功啦！</p>
+<h2 id="4、开发过程中分支的作用及其工作原理"><a href="#4、开发过程中分支的作用及其工作原理" class="headerlink" title="4、开发过程中分支的作用及其工作原理"></a>4、开发过程中分支的作用及其工作原理</h2><p><strong>目录</strong></p>
+<ul>
+<li>原理图</li>
+<li>主分支（master）</li>
+<li>开发分支（develop）</li>
+<li>功能分支（feature）</li>
+<li>预发布分支（release）</li>
+<li>修补bug分支（hotfixes）</li>
+</ul>
+<h3 id="4-1-原理图"><a href="#4-1-原理图" class="headerlink" title="4.1 原理图"></a>4.1 原理图</h3><p><img src="/2019/05/22/github/04.jpeg" alt><br><img src="/2019/05/22/github/01.png" alt></p>
+<h3 id="4-2-主分支（master）"><a href="#4-2-主分支（master）" class="headerlink" title="4.2 主分支（master）"></a>4.2 主分支（master）</h3><p>代码库应该有且只有一个主分支。所有提供给用户使用的正式版本，都在这个主分支上发布。</p>
+<p>Git主分支的名字，默认叫做Master。它是自动建立的，版本库初始化以后，默认就是在主分支在进行开发。</p>
+<h3 id="4-3-开发分支（develop）"><a href="#4-3-开发分支（develop）" class="headerlink" title="4.3 开发分支（develop）"></a>4.3 开发分支（develop）</h3><p>主分支只用来分布重大版本，日常开发应该在另一条分支上完成。我们把开发用的分支，叫做Develop。</p>
+<p>这个分支可以用来生成代码的最新隔夜版本（nightly）。如果想正式对外发布，就在Master分支上，对Develop分支进行”合并”（merge）。<br> Git创建Develop分支的命令<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> develop master</span><br></pre></td></tr></table></figure></p>
+<pre><code>将Develop分支发布到Master分支的命令
+</code></pre><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge --no-ff develop</span><br></pre></td></tr></table></figure>
+<p>–no-ff参数：默认情况下，Git执行”快进式合并”，会直接将Master分支指向Develop分支。强推。少用！！</p>
+<h3 id="4-4-临时性分支"><a href="#4-4-临时性分支" class="headerlink" title="4.4 临时性分支"></a>4.4 临时性分支</h3><p>前面讲到版本库的两条主要分支：Master和Develop。前者用于正式发布，后者用于日常开发。其实，常设分支只需要这两条就够了，不需要其他了。</p>
+<p>但是，除了常设分支以外，还有一些临时性分支，用于应对一些特定目的的版本开发。临时性分支主要有三种：</p>
+<ul>
+<li><p>功能分支 （feature）</p>
+</li>
+<li><p>预发布分支 (release)</p>
+</li>
+<li><p>修补bug分支 (fixbug)</p>
+</li>
+</ul>
+<p>这三种分支都属于临时性需要，使用完以后，应该删除，使得代码库的常设分支始终只有Master和Develop。</p>
+<h3 id="4-5-功能分支（feature）"><a href="#4-5-功能分支（feature）" class="headerlink" title="4.5 功能分支（feature）"></a>4.5 功能分支（feature）</h3><p>为了开发某种特定功能，从Develop分支上面分出来的。开发完成后，要再并入Develop。</p>
+<p>功能分支的名字，可以采用feature-*的形式命名。<br>  创建一个功能分支<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> feature-x develop</span><br></pre></td></tr></table></figure></p>
+<pre><code>合并到develop分支
+</code></pre> <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="literal">-</span><span class="comment">ff</span> <span class="comment">feature</span><span class="literal">-</span><span class="comment">x</span></span><br></pre></td></tr></table></figure>
+<p>  删除feature分支<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d feature-x</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-6-预发布分支（release）"><a href="#4-6-预发布分支（release）" class="headerlink" title="4.6 预发布分支（release）"></a>4.6 预发布分支（release）</h3><p>指发布正式版本之前（即合并到Master分支之前），我们可能需要有一个预发布的版本进行测试。</p>
+<p>预发布分支是从Develop分支上面分出来的，预发布结束以后，必须合并进Develop和Master分支。它的命名，可以采用release-*的形式。<br>创建一个预发布分支：<br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b <span class="keyword">release</span>-<span class="keyword">x</span> develop</span><br></pre></td></tr></table></figure></p>
+<p>确认没有问题后，合并到master分支：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge --no-ff release-x</span><br></pre></td></tr></table></figure></p>
+<p>对合并生成的新节点，做一个标签<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">tag</span> <span class="title">-a</span> x</span><br></pre></td></tr></table></figure></p>
+<p>再合并到develop分支<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br><span class="line">git <span class="built_in">merge</span> <span class="comment">--no-ff release-x</span></span><br></pre></td></tr></table></figure></p>
+<p>最后记得删除预发布分支：<br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d <span class="keyword">release</span>-<span class="keyword">x</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-7-修补bug分支（hotfixes）"><a href="#4-7-修补bug分支（hotfixes）" class="headerlink" title="4.7 修补bug分支（hotfixes）"></a>4.7 修补bug分支（hotfixes）</h3><p>软件正式发布以后，难免会出现bug。这时就需要创建一个分支，进行bug修补。</p>
+<p>修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进Master和Develop分支。它的命名，可以采用fixbug-*的形式。<br>创建一个修补bug分支：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> fixbug-xx master</span><br></pre></td></tr></table></figure></p>
+<p>修补结束后，合并到master分支：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge --no-ff fixbug-xx</span><br><span class="line">git <span class="keyword">tag</span> <span class="title">-a</span> xx</span><br></pre></td></tr></table></figure></p>
+<p>再合并到develop分支：<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="literal">-</span><span class="comment">ff</span> <span class="comment">fixbug</span><span class="literal">-</span><span class="comment">xx</span></span><br></pre></td></tr></table></figure></p>
+<p>最后，删除”修补bug分支”：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d fixbug-xx</span><br></pre></td></tr></table></figure></p>
+<h2 id="5、多人合作共同开发的工作流程"><a href="#5、多人合作共同开发的工作流程" class="headerlink" title="5、多人合作共同开发的工作流程"></a>5、多人合作共同开发的工作流程</h2><p>在基于以上对文件在被git管理过程中所处的四个阶段、三种状态以及多种分支的功能作用以及原理的了解下，可以学习多人合作共同开发的工作流程了。<br><a href="https://www.cnblogs.com/Chayeen/p/9989628.html" target="_blank" rel="noopener">参考文章１：git多人协作工作流程</a><br><a href="https://www.cnblogs.com/onelikeone/p/6857910.html" target="_blank" rel="noopener">Git 多人协作开发的过程</a></p>
+<h3 id="需要继续研究的"><a href="#需要继续研究的" class="headerlink" title="需要继续研究的"></a>需要继续研究的</h3><p><a href="https://blog.csdn.net/qq360694660/article/details/80256367" target="_blank" rel="noopener">1</a><br><a href="https://blog.csdn.net/rubulai/article/details/84563106" target="_blank" rel="noopener">2</a><br><a href="http://www.sohu.com/a/115137833_494937" target="_blank" rel="noopener">3</a><br><a href="https://www.cnblogs.com/softwarefang/p/5864138.html" target="_blank" rel="noopener">4</a><br><a href="https://git-scm.com/book/zh/v1/%E5%88%86%E5%B8%83%E5%BC%8F-Git-%E5%88%86%E5%B8%83%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B" target="_blank" rel="noopener">5</a><br><a href>6</a><br><a href>7</a></p>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://www.cnblogs.com/mamingqian/p/9711975.html" target="_blank" rel="noopener">深入理解Git的实现原理</a><br><a href="https://blog.csdn.net/zyw0713/article/details/80083431" target="_blank" rel="noopener">git 的工作流程（纯干货）</a><br><a href="https://blog.csdn.net/dqchouyang/article/details/80315387" target="_blank" rel="noopener">git工作原理</a><br><a href="https://www.cnblogs.com/cb0327/p/5066685.html" target="_blank" rel="noopener">git原理图解</a><br><a href="https://www.cnblogs.com/dogdogwang/p/7072931.html" target="_blank" rel="noopener">Git的思想和基本工作原理2</a><br><a href="https://www.cnblogs.com/houji/p/7941177.html" target="_blank" rel="noopener">Git 思想和工作原理</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/22/JavaScript调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1386,318 +1940,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/begin-React/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/14/begin-React/" itemprop="url">begin React</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T10:59:50+08:00">
-                2019-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="搭建React环境"><a href="#搭建React环境" class="headerlink" title="搭建React环境"></a>搭建React环境</h3><p><a href="https://reactjs.org/docs/create-a-new-react-app.html" target="_blank" rel="noopener">官网文档</a><br>my-app表示文件夹名称<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npx </span><span class="built_in">create-react-app</span> <span class="string">my-app</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> my-<span class="keyword">app</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
-<p>之后就会自动出蹦出一个页面，可以本地查看</p>
-<h3 id="初识React"><a href="#初识React" class="headerlink" title="初识React"></a>初识React</h3><h4 id="代码精简"><a href="#代码精简" class="headerlink" title="代码精简"></a>代码精简</h4><ul>
-<li>index.js是文件入口</li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> serviceWorker <span class="keyword">from</span> <span class="string">'./serviceWorker'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// If you want your app to work offline and load faster, you can change</span></span><br><span class="line"><span class="comment">// unregister() to register() below. Note this comes with some pitfalls.</span></span><br><span class="line"><span class="comment">// Learn more about service workers: https://bit.ly/CRA-PWA</span></span><br><span class="line">serviceWorker.unregister();</span><br></pre></td></tr></table></figure>
-<p>删除掉可能用不到的代码之后为<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure></p>
-<p>删除serviceworker.js文件<br>index.css文件定义了index页面的边距之类的样式，也可以暂时不要<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure></p>
-<p>同时目录下的index.css文件也可以删去<br>app.test.js是做自动化测试的时候使用的，如果不做也可以删去<br>app.js文件中div标签里的内容也可删掉，同时app.css文件的引用以及app.css文件也可以删去，logo图片的引用也可以删去，logo也可删去<br><strong>到目前为止Src目录下就非常简单了</strong></p>
-<ul>
-<li><p>app.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>index.js</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="最最基本的组件的定义和使用"><a href="#最最基本的组件的定义和使用" class="headerlink" title="最最基本的组件的定义和使用"></a>最最基本的组件的定义和使用</h4><h4 id="JSX语法的学习"><a href="#JSX语法的学习" class="headerlink" title="JSX语法的学习"></a>JSX语法的学习</h4>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/13/my-first-article/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/13/my-first-article/" itemprop="url">my first article</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T23:05:18+08:00">
-                2019-05-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/elementary-knowledge/" itemprop="url" rel="index">
-                    <span itemprop="name">elementary knowledge</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><ul>
-<li><a href="https://www.cnblogs.com/jackyroc/p/7681938.html" target="_blank" rel="noopener">我是如何利用github pages搭建起我的博客的</a></li>
-<li><a href="https://www.jianshu.com/p/9f0e90cc32c2" target="_blank" rel="noopener">Hexo-Next配置超炫网页效果</a></li>
-<li><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next官方文档</a></li>
-<li><a href="https://www.jianshu.com/p/21c94eb7bcd1" target="_blank" rel="noopener">Hexo-Next主题及我走过的坑</a></li>
-<li><a href="http://rayboo.netlify.com/2018/10/29/hexo-next-%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB%E5%8A%A8%E7%94%BB/" target="_blank" rel="noopener">鼠标点击爆炸效果的实现</a></li>
-<li><a href="https://www.jianshu.com/p/1f8107a8778c" target="_blank" rel="noopener">Hexo搭建个人博客－－Next主题优化</a></li>
-<li><a href="https://blog.csdn.net/ganzhilin520/article/details/79047249" target="_blank" rel="noopener">Hexo设置关于、标签、分类、归档</a></li>
-</ul>
-<h3 id="博客上传文件步骤"><a href="#博客上传文件步骤" class="headerlink" title="博客上传文件步骤"></a>博客上传文件步骤</h3><ul>
-<li>myblog目录下在命令行中输入（xxx为文章名称），之后在source/_posts，目录下会自动生成xxxx.md文件</li>
-</ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"xxxx"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>打开之后会看到</li>
-</ul>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">title:</span> xxxx</span><br><span class="line"><span class="symbol">data:</span> <span class="number">2018</span><span class="number">-5</span><span class="number">-14</span> <span class="number">10</span>:<span class="number">42</span>:<span class="number">50</span></span><br><span class="line"><span class="symbol">tages:</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>之后可以在上面设置关于、标签、分类和归档等</li>
-</ul>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">title:</span> xxxx</span><br><span class="line"><span class="symbol">data:</span> <span class="number">2018</span><span class="number">-5</span><span class="number">-14</span> <span class="number">10</span>:<span class="number">42</span>:<span class="number">50</span></span><br><span class="line"><span class="symbol">tages:</span>  </span><br><span class="line">- tag1</span><br><span class="line">- tag2</span><br><span class="line"><span class="symbol">categories:</span></span><br><span class="line">- <span class="number">1</span></span><br><span class="line">- <span class="number">2</span></span><br><span class="line"><span class="symbol">about:</span> </span><br><span class="line"><span class="symbol">archives:</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>myblog目录下</li>
-</ul>
-<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">generate</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo deploy</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1743,7 +1992,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1765,7 +2014,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
