@@ -264,6 +264,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/26/Windows上下载React、Taro遇到的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/26/Windows上下载React、Taro遇到的坑/" itemprop="url">Windows上下载React、Taro遇到的坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-26T17:55:41+08:00">
+                2019-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="安装react、taro之前的准备工作"><a href="#安装react、taro之前的准备工作" class="headerlink" title="安装react、taro之前的准备工作"></a>安装react、taro之前的准备工作</h4><ul>
+<li>安装node（装了node的同时会装npm）</li>
+<li>安装cnpm（最好装一下cnpm，实际上不使用cnpm也可以）</li>
+<li>安装合适版本的webpack</li>
+</ul>
+<p>1、<a href="https://blog.csdn.net/wjnf012/article/details/80422313" target="_blank" rel="noopener">安装node以及cnpm的教程</a><br>千万注意！！！打开windows终端之后默认的目录是C:/Users/hp，但是我在官网上下载的node保存在D:/Program Files/nodejs里面，设置环境变量的时候设置的是node，导致cnpm -v总出现不是内部命令的提示，实际上就是因为cnpm没有设置好环境变量！！！<br><img src="/2019/05/26/Windows上下载React、Taro遇到的坑/01.png" alt><br>理想状态下的nodejs文件夹是这样的，保存npm和npm.cmd，以及cnpm和cnpm.cmd这两种后缀名的文件，包括我下载的别的内容也如此：<br><img src="/2019/05/26/Windows上下载React、Taro遇到的坑/02.png" alt><br>包括文件本身及其.cmd后缀文件，然后它们相应的的文件夹保存在node_modules文件夹中<br><img src="/2019/05/26/Windows上下载React、Taro遇到的坑/03.png" alt><br>2、在把这些都搞好以后，我装了react，但是运行时它又提示webpack版本过高，所以重新下载了它要求的版本，然后继续提升webpack-dev-server版本过低，所以也重新下载了它要求的版本。然后才能够运行</p>
+<p>3、taro的坑是无法自动安装项目依赖，安装项目依赖失败后手动安装npm install也不行，解决方法是安装cnpm</p>
+<p>4、taro安装依赖成功后编译不成功，<br><img src="/2019/05/26/Windows上下载React、Taro遇到的坑/04.png" alt><br>关注taro不是内部命令，由前几次安装cnpm失败可知这是taro设置全局变量不成功，所以就有了上面nodejs文件夹里的格式，再windows上安装这些东西，最大的坑就是要设置全局变量，然后设置错误啊！！！！= = 有的人不需要设置系统直接给出了，有的倒霉蛋比如我就得一个一个设置，总而言之安装上方nodejs的文件夹格式是可以设置成功的</p>
+<p>5、taro下载依赖不成功的理由还有没有下载python，所以又跑去下载了Python，神奇的是这个不需要设置全局变量它自己给我设置好了</p>
+<p>总结：taro其实和react安装差不多，但是可能是taro它比较新所以不完善吗？？？它的错误提示一点都不明确，都是一些看不懂的内容，幸亏我是react、taro一起下，出现了同样看不懂的内容，react还提示了我看得懂的内容，比如我要下载Python，比如我webpack和webpack-dev-server版本不对等等，这次在windows上安装最大的收获就是学会看错误提示了，一起看都不想看看也看不懂的内容，这次仔细瞅瞅发现还是可以看懂的，只是需要耐心。一定一定要仔细看它的错误提示！！！！它说not found在一个路径中，你就把这个文件放在它要的路径中，它说need xxx，你就下载个xxx，不要急着找教程，网上教程很可能没有你恰好遇到的问题</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/26/Taro总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -508,14 +639,16 @@
 <h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>下面就以上学习到的内容进行总结，大部分的结构为仓库代码、环境的搭建、该框架所必备的学习到的基础知识总结、写项目的思路、遇到的问题及解决</p>
 <h3 id="Taro-—-gt-MiniProject"><a href="#Taro-—-gt-MiniProject" class="headerlink" title="Taro —&gt; MiniProject"></a>Taro —&gt; MiniProject</h3><ul>
 <li><a href="https://github.com/muxi-mini-project/2019-Rank-frontend" target="_blank" rel="noopener">仓库</a></li>
-<li>环境搭建</li>
-<li>项目的构建及分工</li>
-<li>页面的搭建</li>
-<li>问题及解决</li>
+<li>环境搭建<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install -g @tarojs/cli</span><br><span class="line">yarn <span class="built_in">global</span> add @tarojs/cli</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href>遇到的问题</a></p>
+<ul>
+<li><a href="https://lilixuelian.github.io/2019/05/26/Taro%E6%80%BB%E7%BB%93/">页面的搭建、遇到的问题及解决</a></li>
 </ul>
 <h3 id="React-—-gt-TodoList"><a href="#React-—-gt-TodoList" class="headerlink" title="React —&gt; TodoList"></a>React —&gt; TodoList</h3><ul>
 <li><a href>仓库</a></li>
-<li>环境搭建</li>
+<li>环境搭建<br><a href>遇到的一些问题</a></li>
 <li>React基本了解的内容</li>
 <li>代码优化</li>
 <li>问题及解决</li>
@@ -538,9 +671,6 @@
 <li>环境搭建</li>
 <li>基本配置</li>
 <li>使用</li>
-</ul>
-<h3 id="CSAPP"><a href="#CSAPP" class="headerlink" title="CSAPP"></a>CSAPP</h3><ul>
-<li><a href>必备内容</a></li>
 </ul>
 <h3 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h3><ul>
 <li><a href>github基础知识</a></li>
@@ -1752,272 +1882,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/22/cache/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/22/cache/" itemprop="url">cache</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T08:45:00+08:00">
-                2019-05-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h2><p>１、CDN缓存<br>２、DNS缓存<br>３、本地缓存</p>
-<ul>
-<li>Cookie</li>
-<li>Session</li>
-<li>LocalStorage</li>
-<li>SessionStorage</li>
-</ul>
-<p>４、浏览器缓存</p>
-<ul>
-<li>meta标签</li>
-<li>http header</li>
-</ul>
-<hr>
-<h1 id="CDN缓存"><a href="#CDN缓存" class="headerlink" title="CDN缓存"></a>CDN缓存</h1><h3 id="什么是CDN"><a href="#什么是CDN" class="headerlink" title="什么是CDN?"></a>什么是CDN?</h3><p>CDN(Content Delivery Network): 即内容分发网络<br>看到一个形象的比喻，来比喻CDN。</p>
-<p>10年前，还没有火车票代售点一说，12306.cn更是无从说起。那时候火车票还只能在火车站的售票大厅购买，而我所在的小县城并不通火车，火车票都要去市里的火车站购买，而从我家到县城再到市里，来回就是4个小时车程，简直就是浪费生命。后来就好了，小县城里出现了火车票代售点，甚至乡镇上也有了代售点，可以直接在代售点购买火车票，方便了不少，全市人民再也不用在一个点苦逼的排队买票了。</p>
-<p>CDN就可以理解为分布在每个县城或者乡镇的火车票代售点，用户在浏览网站的时候，CDN会选择一个离用户最近的CDN边缘节点来响应用户的请求，这样海南移动用户的请求就不会千里迢迢跑到北京电信机房的服务器（假设源站部署在北京电信机房）上了。</p>
-<h3 id="CDN的优势"><a href="#CDN的优势" class="headerlink" title="CDN的优势"></a>CDN的优势</h3><ul>
-<li>CDN节点解决了跨运营商和跨地域访问的问题，访问延时大大降低；</li>
-<li>大部分请求在CDN边缘节点完成，CDN起到了分流作用，减轻了源站的负载。</li>
-</ul>
-<h3 id="CDN的工作机制"><a href="#CDN的工作机制" class="headerlink" title="CDN的工作机制"></a>CDN的工作机制</h3><p>关于CDN缓存 ，在浏览器本地缓存失效后，浏览器会向CDN边缘节点发起请求。类似浏览器缓存，CDN边缘节点也存在着一套缓存机制。CDN边缘节点缓存策略因服务商不同而不同，但一般都会遵循http标准协议，通过http响应头中的<code>Cache-control: max-age</code>的字段来设置CDN边缘节点数据缓存时间。</p>
-<p>当客户端向CDN节点请求数据时，CDN节点会判断缓存数据是否过期，若缓存数据并没有过期，则直接将缓存数据返回给客户端；否则，CDN节点就会向源站发出回源请求，从源站拉取最新数据，更新本地缓存，并将最新数据返回给客户端。 CDN服务商一般会提供基于文件后缀、目录多个维度来指定CDN缓存时间，为用户提供更精细化的缓存管理。</p>
-<hr>
-<h1 id="DNS缓存"><a href="#DNS缓存" class="headerlink" title="DNS缓存"></a>DNS缓存</h1><h3 id="什么是DNS"><a href="#什么是DNS" class="headerlink" title="什么是DNS"></a>什么是DNS</h3><p>DNS: Domain Name System,即域名系统，负责将域名URL转化为服务器主机IP。</p>
-<h3 id="DNS的工作机制"><a href="#DNS的工作机制" class="headerlink" title="DNS的工作机制"></a>DNS的工作机制</h3><p>DNS查找流程：首先查看浏览器缓存是否存在，不存在则访问本机DNS缓存，再不存在则访问本地DNS服务器。所以DNS也是开销，通常浏览器查找一个给定URL的IP地址要花费20-120ms，在DNS查找完成前，浏览器不能从host那里下载任何东西。</p>
-<p>TTL(Time To Live)：表示查找返回的DNS记录包含的一个存活时间，过期则这个DNS记录将被抛弃。浏览器DNS缓存也有自己的过期时间，这个时间是独立于本机DNS缓存的，相对也比较短，例如chrome只有1分钟左右。</p>
-<hr>
-<h1 id="四种本地缓存机制"><a href="#四种本地缓存机制" class="headerlink" title="四种本地缓存机制"></a>四种本地缓存机制</h1><h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>cookie是比较老的前端缓存技术了，它的特点是：</p>
-<ul>
-<li>想要使用它前端必须要有服务（静态网页是不行的），而且存储大小限制在4kb</li>
-<li>必须要有服务才能使用cookie，因为只要有请求涉及，cookie就要在服务器和浏览器之间来回传送。</li>
-<li>由于cookie是存放在前端的，所以安全问题一直是个大问题，因此一般重要的信息不建议放在cookie中存放。</li>
-</ul>
-<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p>对于服务端的程序员来说session大家肯定很熟悉了，session是一种服务端的机制，也就是能把信息存放在服务端，所以安全可以保障，它的原理是通过session id来识别客户端，这个session id是存放在cookie中的（当然session id让用户看见没无妨），服务端会通过session id来识别客户端进行匹配和判断。它和cookie对比起来差距就很明显了，一个是把数据存在客户端；一个存在服务端，从安全性考虑的话一般像用户名密码这种私密信息一般放在session中。</p>
-<h4 id="Cookie和Session简单对比"><a href="#Cookie和Session简单对比" class="headerlink" title="Cookie和Session简单对比"></a>Cookie和Session简单对比</h4><p>1）Cookie数据存放在客户的浏览器上，Session数据放在服务器上。</p>
-<p>2）Cookie不是很安全，别人可以分析存放在本地的Cookie并进行Cookie欺骗，考虑到安全应当使用Session。</p>
-<p>3）Session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用Cookie。<br>4）单个Cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个Cookie。<br>5）所以建议：</p>
-<ul>
-<li>将登陆信息等重要信息存放为Session</li>
-<li>其他信息如果需要保留，可以放在Cookie中</li>
-</ul>
-<h2 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h2><p>它的特点就是持久一旦通过保存，不通过手动清除的话，就会一直保存在前端。它能保存更大的数据（IE8上是10MB，Chrome是5MB），同时保存的数据不会再发送给服务器，避免带宽浪费。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">localStorage.length    <span class="comment">//获得storage中的个数</span></span><br><span class="line">localStorage.<span class="built_in">key</span>(n)    <span class="comment">//获得storage中第n个元素对的键值（第一个元素是0）</span></span><br><span class="line">localStorage.getItem(<span class="built_in">key</span>)    <span class="comment">//获取键值key对应的值</span></span><br><span class="line">localStorage.<span class="built_in">key</span>    <span class="comment">//获取键值key对应的值</span></span><br><span class="line">localStorage.setItem(<span class="built_in">key</span>, value)    <span class="comment">//添加数据，键值为key，值为value</span></span><br><span class="line">localStorage.removeItem(<span class="built_in">key</span>)    <span class="comment">//移除键值为key的数据</span></span><br><span class="line">localStorage.<span class="built_in">clear</span>()    <span class="comment">//清除所有数据</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h2><p>这个和localStorage有什么区别呢？sessionStorage是一种会话级别的本地存储，一旦关闭浏览器他就会消失，而前者是很持久的，即使你关闭一万次浏览器也没事，所以差距还是很大的。</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.length    <span class="comment">//获得storage中的个数</span></span><br><span class="line">sessionStorage.<span class="built_in">key</span>(n)    <span class="comment">//获得storage中第n个元素对的键值（第一个元素是0）</span></span><br><span class="line">sessionStorage.getItem(<span class="built_in">key</span>)    <span class="comment">//获取键值key对应的值</span></span><br><span class="line">sessionStorage.<span class="built_in">key</span>    <span class="comment">//获取键值key对应的值</span></span><br><span class="line">sessionStorage.setItem(<span class="built_in">key</span>, value)    <span class="comment">//添加数据，键值为key，值为value</span></span><br><span class="line">sessionStorage.removeItem(<span class="built_in">key</span>)    <span class="comment">//移除键值为key的数据</span></span><br><span class="line">sessionStorage.<span class="built_in">clear</span>()    <span class="comment">//清除所有数据</span></span><br></pre></td></tr></table></figure>
-<h4 id="sessionStorage和localStorage的区别"><a href="#sessionStorage和localStorage的区别" class="headerlink" title="sessionStorage和localStorage的区别"></a>sessionStorage和localStorage的区别</h4><p>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。当用户关闭浏览器窗口后，数据立马会被删除。</p>
-<p>localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。第二天、第二周或下一年之后，数据依然可用。</p>
-<hr>
-<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><h2 id="什么是浏览器缓存"><a href="#什么是浏览器缓存" class="headerlink" title="什么是浏览器缓存"></a>什么是浏览器缓存</h2><p>简单来说，浏览器缓存就是把一个已经请求过的Web资源（如html页面，图片，js，数据等）拷贝一份副本储存在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。比较常见的就是浏览器会缓存访问过网站的网页，当再次访问这个URL地址的时候，如果网页没有更新，就不会再次下载网页，而是直接使用本地缓存的网页。只有当网站明确标识资源已经更新，浏览器才会再次下载网页。</p>
-<h2 id="为什么使用缓存"><a href="#为什么使用缓存" class="headerlink" title="为什么使用缓存"></a>为什么使用缓存</h2><p><img src="/2019/05/22/cache/01.jpeg" alt="为什么使用缓存"><br><strong>1、减少网络带宽消耗重叠。</strong><br>       无论对于网站运营者或者用户，带宽都代表着金钱，过多的带宽消耗，只会便宜了网络运营商。当Web缓存副本被使用时，只会产生极小的网络流量，可以有效的降低运营成本。</p>
-<p><strong>2、降低服务器压力</strong><br>       给网络资源设定有效期之后，用户可以重复使用本地的缓存，减少对源服务器的请求，间接降低服务器的压力。同时，搜索引擎的爬虫机器人也能根据过期机制降低爬取的频率，也能有效降低服务器的压力。</p>
-<p><strong>3、减少网络延迟，加快页面打开速度</strong><br>       带宽对于个人网站运营者来说是十分重要，而对于大型的互联网公司来说，可能有时因为钱多而真的不在乎。那Web缓存还有作用吗？答案是肯定的，对于最终用户，缓存的使用能够明显加快页面打开速度，达到更好的体验。</p>
-<hr>
-<h2 id="浏览器端的缓存规则"><a href="#浏览器端的缓存规则" class="headerlink" title="浏览器端的缓存规则"></a>浏览器端的缓存规则</h2><p>对于浏览器端的缓存来讲，这些规则是在HTTP协议头和HTML页面的Meta标签中定义的。他们分别从新鲜度和校验值两个维度来规定浏览器是否可以直接使用缓存中的副本，还是需要去源服务器获取更新的版本。</p>
-<ul>
-<li>新鲜度(过期机制)：也就是缓存副本有效期。一个缓存副本必须满足以下条件，浏览器会认为它是有效的，足够新的：<pre><code>含有完整的过期时间控制头信息（HTTP协议报头），并且仍在有效期内；
-浏览器已经使用过这个缓存副本，并且在一个会话中已经检查过新鲜度；
-</code></pre></li>
-</ul>
-<p>满足以上两个情况的一种，浏览器会直接从缓存中获取副本并渲染。</p>
-<ul>
-<li>校验值（验证机制）：服务器返回资源的时候有时在控制头信息带上这个资源的实体标签Etag（Entity Tag），它可以用来作为浏览器再次请求过程的校验标识。如过发现校验标识不匹配，说明资源已经被修改或过期，浏览器需求重新获取资源内容。</li>
-</ul>
-<h3 id="meta标签常见以下几种用法"><a href="#meta标签常见以下几种用法" class="headerlink" title="meta标签常见以下几种用法"></a>meta标签常见以下几种用法</h3><p>１、pragma与no-cache用于定义页面缓存<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"pragma"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>２、常见的取值有private、no-cache、max-age、must-revalidate等，默认为private<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"cache-control"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>３、指定Expires值为一个早已过去的时间，那么访问此网时若重复在地址栏按回车，那么每次都会重复访问<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Expires"</span> <span class="attribute">content</span>=<span class="string">"0"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2019/05/22/cache/20.png" alt="为什么使用缓存"></p>
-<h3 id="http-header"><a href="#http-header" class="headerlink" title="http header"></a>http header</h3><hr>
-<h4 id="在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文"><a href="#在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文" class="headerlink" title="在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文"></a>在介绍HTTP缓存之前，作为知识铺垫，先简单介绍一下HTTP报文</h4><p><strong>HTTP报文</strong>就是浏览器和服务器间通信时发送及响应的数据块。<br>浏览器向服务器请求数据，发送请求(request)报文；服务器向浏览器返回数据，返回响应(response)报文。<br>~~~~<br>报文信息主要分为两部分</p>
-<ul>
-<li>包含属性的首部(header)————————–附加信息（cookie，缓存信息等）与缓存相关的规则信息，均包含在header中</li>
-<li>包含数据的主体部分(body)———————–HTTP请求真正想要传输的部分</li>
-</ul>
-<hr>
-<h4 id="继续介绍缓存规则："><a href="#继续介绍缓存规则：" class="headerlink" title="继续介绍缓存规则："></a>继续介绍缓存规则：</h4><p>为方便大家理解，我们认为浏览器存在一个<strong>缓存数据库</strong>,用于存储缓存信息。<br>在客户端第一次请求数据时，此时缓存数据库中没有对应的缓存数据，需要请求服务器，服务器返回后，将数据存储至缓存数据库中。<br>HTTP缓存有多种规则，根据是否需要重新向服务器发起请求来分类，我将其分为两大类(强制缓存，对比缓存)<br><img src="/2019/05/22/cache/02.png" alt><br>在详细介绍这两种规则之前，先通过时序图的方式，让大家对这两种规则有个简单了解。</p>
-<p>已存在缓存数据时，仅基于强制缓存，请求数据的流程如下<br><img src="/2019/05/22/cache/03.png" alt></p>
-<p>已存在缓存数据时，仅基于对比缓存，请求数据的流程如下<br><img src="/2019/05/22/cache/05.png" alt></p>
-<p>我们可以看到两类缓存规则的不同，强制缓存如果生效，不需要再和服务器发生交互，而对比缓存不管是否生效，都需要与服务端发生交互。<br>两类缓存规则可以同时存在，强制缓存优先级高于对比缓存，也就是说，当执行强制缓存的规则时，如果缓存生效，直接使用缓存，不再执行对比缓存规则。</p>
-<p>强缓存与协议缓存的主要区别：<br><img src="/2019/05/22/cache/14.png" alt></p>
-<h3 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h3><h4 id="如何判断缓存是否失效"><a href="#如何判断缓存是否失效" class="headerlink" title="如何判断缓存是否失效"></a>如何判断缓存是否失效</h4><p>从上文我们得知，强制缓存，在缓存数据未失效的情况下，可以直接使用缓存数据，那么浏览器是如何判断缓存数据是否失效呢？<br>我们知道，在没有缓存数据的时候，浏览器向服务器请求数据时，服务器会将数据和缓存规则一并返回，缓存规则信息包含在响应header中。</p>
-<p>对于强制缓存来说，响应header中会有两个字段来标明失效规则（Expires/Cache-Control）<br>使用chrome的开发者工具，可以很明显的看到对于强制缓存生效时，网络请求的情况<br><a href="https://www.cnblogs.com/slly/p/6732749.html" target="_blank" rel="noopener">与缓存有关的HTTP消息报头</a></p>
-<h4 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h4><p>Expires的值为服务端返回的到期时间，即下一次请求时，请求时间小于服务端返回的到期时间，直接使用缓存数据。<br>不过Expires 是HTTP 1.0的东西，现在默认浏览器均默认使用HTTP 1.1，所以它的作用基本忽略。<br>另一个问题是，到期时间是由服务端生成的，但是客户端时间可能跟服务端时间有误差，这就会导致缓存命中的误差。<br>所以HTTP 1.1 的版本，使用Cache-Control替代。</p>
-<h4 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h4><p>Cache-Control 是最重要的规则。常见的取值有private、public、no-cache、max-age，no-store，默认为private。<br>private:             客户端可以缓存<br>public:              客户端和代理服务器都可缓存（前端的同学，可以认为public和private是一样的）<br>max-age=xxx:   缓存的内容将在 xxx 秒后失效<br>no-cache:          需要使用对比缓存来验证缓存数据（后面介绍）<br>no-store:           所有内容都不会缓存，强制缓存，对比缓存都不会触发（对于前端开发来说，缓存越多越好，so…基本上和它说886）</p>
-<p><strong>举个例子：</strong><br><img src="/2019/05/22/cache/09.png" alt><br>图中Cache-Control仅指定了max-age，所以默认为private，缓存时间为31536000秒（365天）<br>也就是说，在365天内再次请求这条数据，都会直接获取缓存数据库中的数据，直接使用。</p>
-<h3 id="对比缓存-协商缓存"><a href="#对比缓存-协商缓存" class="headerlink" title="对比缓存(协商缓存)"></a>对比缓存(协商缓存)</h3><h4 id="缓存标识如何传递"><a href="#缓存标识如何传递" class="headerlink" title="缓存标识如何传递"></a>缓存标识如何传递</h4><p>对比缓存，顾名思义，需要进行比较判断是否可以使用缓存。<br>浏览器第一次请求数据时，服务器会将缓存标识与数据一起返回给客户端，客户端将二者备份至缓存数据库中。<br>再次请求数据时，客户端将备份的缓存标识发送给服务器，服务器根据缓存标识进行判断，判断成功后，返回304状态码，通知客户端比较成功，可以使用缓存数据。<br>第一次访问：<img src="/2019/05/22/cache/10.png" alt><br>再次访问：<img src="/2019/05/22/cache/11.png" alt><br>通过两图的对比，我们可以很清楚的发现，在对比缓存生效时，状态码为304，并且报文大小和请求时间大大减少。<br>原因是，服务端在进行标识比较后，只返回header部分，通过状态码通知客户端使用缓存，不再需要将报文主体部分返回给客户端。</p>
-<p>对于对比缓存来说，缓存标识的传递是我们着重需要理解的，它在请求header和响应header间进行传递，<br>一共分为两种标识传递，接下来，我们分开介绍。</p>
-<h4 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified/If-Modified-Since"></a>Last-Modified/If-Modified-Since</h4><p><img src="/2019/05/22/cache/21.png" alt="为什么使用缓存"></p>
-<h5 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h5><p>服务器在响应请求时，告诉浏览器资源的最后修改时间。<br><img src="/2019/05/22/cache/12.png" alt></p>
-<h5 id="If-Modified-Since"><a href="#If-Modified-Since" class="headerlink" title="If-Modified-Since"></a>If-Modified-Since</h5><p>再次请求服务器时，通过此字段通知服务器上次请求时，服务器返回的资源最后修改时间。<br>服务器收到请求后发现有头If-Modified-Since 则与被请求资源的最后修改时间进行比对。<br>若资源的最后修改时间大于If-Modified-Since，说明资源又被改动过，则响应整片资源内容，返回状态码200；<br>若资源的最后修改时间小于或等于If-Modified-Since，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。<br><img src="/2019/05/22/cache/13.png" alt></p>
-<h4 id="Etag-If-None-Match（优先级高于Last-Modified-If-Modified-Since）"><a href="#Etag-If-None-Match（优先级高于Last-Modified-If-Modified-Since）" class="headerlink" title="Etag/If-None-Match（优先级高于Last-Modified  /  If-Modified-Since）"></a>Etag/If-None-Match（优先级高于Last-Modified  /  If-Modified-Since）</h4><h5 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h5><p>服务器响应请求时，告诉浏览器当前资源在服务器的唯一标识（生成规则由服务器决定）。<br><img src="/2019/05/22/cache/16.png" alt></p>
-<h5 id="If-None-Match"><a href="#If-None-Match" class="headerlink" title="If-None-Match"></a>If-None-Match</h5><p>再次请求服务器时，通过此字段通知服务器客户段缓存数据的唯一标识。<br>服务器收到请求后发现有头If-None-Match 则与被请求资源的唯一标识进行比对，<br>不同，说明资源又被改动过，则响应整片资源内容，返回状态码200；<br>相同，说明资源无新修改，则响应HTTP 304，告知浏览器继续使用所保存的cache。<br><img src="/2019/05/22/cache/15.png" alt></p>
-<h4 id="如何判断缓存新鲜度"><a href="#如何判断缓存新鲜度" class="headerlink" title="如何判断缓存新鲜度"></a>如何判断缓存新鲜度</h4><p>Web服务器通过2种方式来判断浏览器缓存是否是最新的。</p>
-<ul>
-<li><p>第一种， 浏览器把缓存文件的最后修改时间通过 header ”If-Modified-Since“来告诉Web服务器。</p>
-</li>
-<li><p>第二种， 浏览器把缓存文件的ETag, 通过header “If-None-Match”, 来告诉Web服务器。</p>
-</li>
-</ul>
-<h4 id="为什么有了last-modified还要有etags"><a href="#为什么有了last-modified还要有etags" class="headerlink" title="为什么有了last-modified还要有etags"></a>为什么有了last-modified还要有etags</h4><ul>
-<li>某些服务器不能精确得到资源的最后修改时间，这样就无法通过最后修改时间判断资源是否更新</li>
-<li>如果资源修改非常频繁，在秒以下的时间内进行修改，而Last-modified只能精确到秒</li>
-<li>一些资源的最后修改时间改变了，但是内容没改变，使用ETag就认为资源还是没有修改的</li>
-</ul>
-<hr>
-<h4 id="用户行为对浏览器缓存的影响星期三-22-五月-2019-12-10下午"><a href="#用户行为对浏览器缓存的影响星期三-22-五月-2019-12-10下午" class="headerlink" title="用户行为对浏览器缓存的影响星期三, 22. 五月 2019 12:10下午"></a>用户行为对浏览器缓存的影响星期三, 22. 五月 2019 12:10下午</h4><p>星期三, 22. 五月 2019 12:10下午 </p>
-<p>所谓用户行为对浏览器缓存的影响，指的就是用户在浏览器如何操作时，会触发怎样的缓存策略。主要有 3 种：</p>
-<ul>
-<li>打开网页，地址栏输入地址： 查找 disk cache 中是否有匹配。如有则使用；如没有则发送网络请求。</li>
-<li>普通刷新 (F5)：因为 TAB 并没有关闭，因此 memory cache 是可用的，会被优先使用(如果匹配的话)。其次才是 disk cache。</li>
-<li>强制刷新 (Ctrl + F5)：浏览器不使用缓存，因此发送的请求头部均带有 Cache-control: no-cache(为了兼容，还带了 Pragma: no-cache),服务器直接返回 200 和最新内容。</li>
-</ul>
-<hr>
-<h3 id="总结强制缓存与比较缓存"><a href="#总结强制缓存与比较缓存" class="headerlink" title="总结强制缓存与比较缓存"></a>总结强制缓存与比较缓存</h3><p>对于强制缓存，服务器通知浏览器一个缓存时间，在缓存时间内，下次请求，直接用缓存，不在时间内，执行比较缓存策略。<br>对于比较缓存，将缓存信息中的Etag和Last-Modified通过请求发送给服务器，由服务器校验，返回304状态码时，浏览器直接使用缓存。<br>浏览器第一次请求：<br><img src="/2019/05/22/cache/07.png" alt><br>浏览器再次请求时：<br><img src="/2019/05/22/cache/08.png" alt></p>
-<h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>回到实际应用上来，首先要明确哪些内容适合被缓存哪些不适合。</p>
-<h4 id="考虑缓存的内容："><a href="#考虑缓存的内容：" class="headerlink" title="考虑缓存的内容："></a>考虑缓存的内容：</h4><ul>
-<li>css样式文件</li>
-<li>js文件</li>
-<li>logo、图标</li>
-<li>html文件</li>
-<li>可以下载的内容<br>####一些不应该被缓存的内容：</li>
-<li>业务敏感的 GET 请求</li>
-</ul>
-<h4 id="可缓存的内容又分为几种不同的情况："><a href="#可缓存的内容又分为几种不同的情况：" class="headerlink" title="可缓存的内容又分为几种不同的情况："></a>可缓存的内容又分为几种不同的情况：</h4><h5 id="不经常改变的文件"><a href="#不经常改变的文件" class="headerlink" title="不经常改变的文件:"></a>不经常改变的文件:</h5><p>给 max-age 设置一个较大的值，一般设置 max-age=31536000</p>
-<p>比如引入的一些第三方文件、打包出来的带有 hash 后缀 css、js 文件。一般来说文件内容改变了，会更新版本号、hash 值，相当于请求另一个文件。</p>
-<p>标准中规定 max-age 的值最大不超过一年，所以设成 max-age=31536000。至于过期内容，缓存区会将一段时间没有使用的文件删除掉。</p>
-<h5 id="可能经常需要变动的文件"><a href="#可能经常需要变动的文件" class="headerlink" title="可能经常需要变动的文件:"></a>可能经常需要变动的文件:</h5><p>Cache-Control: no-cache / max-age=0</p>
-<p>比如入口 index.html 文件、文件内容改变但名称不变的资源。选择 ETag 或 Last-Modified 来做验证，在使用缓存资源之前一定会去服务器端做验证，命中缓存时会比第一种情况慢一点点，毕竟还要发请求进行通信。</p>
-<h3 id="缓存储存在哪儿"><a href="#缓存储存在哪儿" class="headerlink" title="缓存储存在哪儿?"></a>缓存储存在哪儿?</h3><h4 id="disk-cache"><a href="#disk-cache" class="headerlink" title="disk cache"></a>disk cache</h4><p>disk cache为存储在硬盘中的缓存，存储在硬盘中的资源相对稳定，不会随着tab或浏览器的关闭而消失，可以用来存储大型的，需长久使用的资源。<br>当硬盘中的资源被加载时，内存中也存储了该资源，当下次改资源被调用时，会优先从memory cache中读取，加快资源的获取。</p>
-<h4 id="memory-cache"><a href="#memory-cache" class="headerlink" title="memory cache"></a>memory cache</h4><p>memory cache即存储在内存中的缓存，内存中的内容会随着tab的关闭而释放。</p>
-<p>当接口状态返回304时，资源默认存储在memory cache中，当页面关闭后，重新打开需要再次请求。</p>
-<h3 id="为什么有的资源一会from-disk-cache，一会from-memory-cache"><a href="#为什么有的资源一会from-disk-cache，一会from-memory-cache" class="headerlink" title="为什么有的资源一会from disk cache，一会from memory cache?"></a>为什么有的资源一会from disk cache，一会from memory cache?</h3><p>遵循三级缓存原理</p>
-<ul>
-<li>先去内存看，如果有，直接加载<ul>
-<li>如果内存没有，择取硬盘获取，如果有直接加载</li>
-<li>如果硬盘也没有，那么就进行网络请求</li>
-<li>加载到的资源缓存到硬盘和内存，下次请求可以快速从内存中获取到</li>
-</ul>
-</li>
-</ul>
-<h3 id="为什么有的请求状态码返回200，有的返回304"><a href="#为什么有的请求状态码返回200，有的返回304" class="headerlink" title="为什么有的请求状态码返回200，有的返回304?"></a>为什么有的请求状态码返回200，有的返回304?</h3><ul>
-<li>200 from memory cache<br>不访问服务器，直接读缓存，从内存中读取缓存。此时的数据时缓存到内存中的，当关闭进程后，也就是浏览器关闭以后，数据将不存在。<br>但是这种方式只能缓存派生资源。</li>
-<li>200 from disk cache<br>不访问服务器，直接读缓存，从磁盘中读取缓存，当关闭进程时，数据还是存在。<br>这种方式也只能缓存派生资源</li>
-<li>304 Not Modified<br>访问服务器，发现数据没有<br>更新，服务器返回此状态码。然后从缓存中读取数据。</li>
-</ul>
-<h4 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h4><p>该文章以生动的图片形式解释了缓存，建议阅读：<a href="https://blog.csdn.net/weixin_42444057/article/details/80667600" target="_blank" rel="noopener">前端缓存</a></p>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://blog.csdn.net/huang100qi/article/details/77460875" target="_blank" rel="noopener">前端几种本地缓存机制</a><br><a href="https://www.cnblogs.com/slly/p/6732749.html" target="_blank" rel="noopener">浏览器缓存机制详解</a><br><a href="https://www.haorooms.com/post/cache_huancunliyong" target="_blank" rel="noopener">前端性能优化之缓存利用</a><br><a href="http://www.cnblogs.com/chenqf/p/6386163.html" target="_blank" rel="noopener">彻底弄懂HTTP缓存机制及原理</a><br><a href="https://blog.csdn.net/shenmill/article/details/71080926" target="_blank" rel="noopener">前端缓存机制的总结</a><br><a href="http://web.jobbole.com/95617/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="noopener">深入理解浏览器的缓存机制</a><br><a href="https://juejin.im/post/5c4044cd51882524f23032eb?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="noopener">从前端角度理解缓存</a><br><a href="http://web.jobbole.com/95057/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="noopener">一篇文章理解Web缓存</a><br><a href="http://web.jobbole.com/92773/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="noopener">HTTP 缓存机制一二三</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2070,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
