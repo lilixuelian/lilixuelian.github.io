@@ -1069,7 +1069,7 @@
 <p>此外由于时间原因，以下的一些内容没有涉及到，但是在后续学习过程中会完善博客内容。</p>
 <ul>
 <li>多人合作共同开发的工作流程</li>
-<li>何进行版本控制</li>
+<li>如何进行版本控制</li>
 <li>具体命令对应的各种原理性操作</li>
 </ul>
 <hr>
@@ -1082,16 +1082,16 @@
 <h3 id="1-1-git是什么？"><a href="#1-1-git是什么？" class="headerlink" title="1.1 git是什么？"></a>1.1 git是什么？</h3><p>git是一种<strong>分布式版本控制系统</strong></p>
 <h4 id="1-1-1-什么是版本控制？"><a href="#1-1-1-什么是版本控制？" class="headerlink" title="1.1.1 什么是版本控制？"></a>1.1.1 什么是版本控制？</h4><p><strong>版本控制</strong>这个说法多少有一点抽象。事实上，版本控制这件事儿我们一直在做，只是平时不这么称呼。举一个栗子，boss让你写一个策划案，你先完成了一稿，之后又有了一些新的想法，但是并不确定新的想法是否能得到boss的认可，于是你保存了一个初稿，之后在初稿的基础上另存了一个文件，做了部分修改完成了一个修改稿。OK，这时你的策划案就有了两个版本——初稿和修改稿。如果boss对修改稿不满意，你可以很轻易的把初稿拿出来交差。<br> 在这个简单的过程中，你已经执行了一个简单的版本控制操作——把文档保存为初稿和修改稿的过程就是<strong>版本控制</strong>。<br>学术点说，版本控制就是对文件变更过程的管理。说白了，版本控制就是要<strong>把一个文件或一些文件的各个版本按一定的方式管理起来</strong>，目的是需要用到某个版本的时候可以随时拿出来</p>
 <h4 id="1-1-2-为什么是分布式？"><a href="#1-1-2-为什么是分布式？" class="headerlink" title="1.1.2 为什么是分布式？"></a>1.1.2 为什么是分布式？</h4><p>这里的<strong>“分布式”</strong>是相对于<strong>“集中式”</strong>来说的。把数据集中保存在服务器节点，所有的客户节点都从<strong>服务节点</strong>获取数据的版本控制系统叫做<strong>集中式版本控制系统</strong>，比如svn就是典型的集中式版本控制系统。<br>与之相对，Git的数据不止保存在服务器上，同时也完整的保存在<strong>本地计算机</strong>上，所以我们称Git为<strong>分布式版本控制系统。</strong><br>Git的这种特性带来许多便利，比如你可以在完全离线的情况下使用Git，随时随地提交项目更新，而且你不必为单点故障过分担心，即使服务器宕机或数据损毁，也可以用任何一个节点上的数据恢复项目，因为每一个开发节点都保存着完整的项目文件镜像。</p>
-<h3 id="1-2-为什么要使用git？"><a href="#1-2-为什么要使用git？" class="headerlink" title="1.2 为什么要使用git？"></a>1.2 为什么要使用git？</h3><p>就像上文举的例子一样，在未接触版本控制系统之前，大多人会通过保存项目或文件的备份来达到版本控制的目的。通常你的文件或文件夹名会设置成“XXX-v1.0”、“XXX-v2.0”等。</p>
+<h3 id="1-2-为什么要使用git？"><a href="#1-2-为什么要使用git？" class="headerlink" title="1.2 为什么要使用git？"></a>1.2 为什么要使用git？</h3><p>在未接触版本控制系统之前，很多人会通过保存项目或文件的备份来达到版本控制的目的。通常你的文件或文件夹名会设置成“XXX-v1.0”、“XXX-v2.0”等。</p>
 <p>这是一种简单的办法，但过于简单。这种方式无法详细记录版本附加信息，难以应付复杂项目或长期更新的项目，缺乏版本控制约定，对协作开发无能为力。如果你不慎使用了这种方式，那么稍稍过一段时间你就会发现连自己都不知道每个版本间的区别，版本控制形同虚设。</p>
 <ul>
 <li>能够对文件版本控制和多人协作开发</li>
 <li>拥有强大的分支特性，所以能够灵活地以不同的工作流协同开发</li>
 <li>分布式版本控制系统，即使协作服务器宕机，也能继续提交代码或文件到本地仓库，当协作服务器恢复正常工作时，再将本地仓库同步到远程仓库。</li>
-<li>当团队中某个成员完成某个功能时，通过pull request操作来通知其他团队成员，其他团队成员能够review code后再合并代码。</li>
+<li>当团队中某个成员完成某个功能时，通过<code>pull request</code>操作来通知其他团队成员，其他团队成员能够<code>review code</code>后再合并代码。</li>
 </ul>
-<p>诸如此类，数不胜数。然而实现这些功能的基础是对<strong>文件变更过程的存储</strong>。如果我们能抓住这个根本，提纲挈领的学习git，会事半功倍。</p>
-<p>所以，如果问“Git能够解决哪些问题？”我们可以简单的回答：Git解决了版本控制方面的很多问题，但最核心的是它很好的解决了版本状态存储（即文件变更过程存储）的问题。</p>
+<p>诸如此类，数不胜数。然而实现这些功能的基础是对<strong>文件变更过程的存储</strong>。</p>
+<p>所以，如果问“Git能够解决哪些问题？”我们可以简单的回答：Git解决了版本控制方面的很多问题，但最核心的是它很好的解决了<strong>版本状态存储</strong>（即文件变更过程存储）的问题。</p>
 <h3 id="1-3-git的一些基本性质"><a href="#1-3-git的一些基本性质" class="headerlink" title="1.3 git的一些基本性质"></a>1.3 git的一些基本性质</h3><h3 id="1-3-1-直接记录快照，而非差异比较"><a href="#1-3-1-直接记录快照，而非差异比较" class="headerlink" title="1.3.1 直接记录快照，而非差异比较"></a>1.3.1 直接记录快照，而非差异比较</h3><p>  Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git <strong>对待数据的方法</strong>。 概念上来区分，其它大部分系统以<strong>文件变更列表</strong>的方式存储信息。 这类系统(CVS、Subversion、Perforce、Bazaar 等等)将它们保存的信息看作是一组基本文件和每个文件随时间逐步累积的<strong>差异</strong>。存储每个文件与初始版本的<strong>差异</strong>，如下图所示 -<br>  <img src="/2019/05/22/github/05.png" alt><br>   Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是<strong>对小型文件系统的一组快照</strong>。 每次提交更新，或在 Git 中保存项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而是只保留一个链接指向之前存储的文件。 Git 对待数据更像是一个 快照流。如下图所示 -<br>    <img src="/2019/05/22/github/06.png" alt><br>    这是 Git 与几乎所有其它版本控制系统的重要区别。 因此 Git 重新考虑了以前每一代版本控制系统延续下来的诸多方面。 Git 更像是一个小型的文件系统，提供了许多以此为基础构建的超强工具，而不只是一个简单的 VCS。 稍后我们在 Git 分支讨论 Git 分支管理时，将探究这种方式对待数据所能获得的益处。</p>
 <h3 id="1-3-2-近乎所有操作都是本地执行"><a href="#1-3-2-近乎所有操作都是本地执行" class="headerlink" title="1.3.2 近乎所有操作都是本地执行"></a>1.3.2 近乎所有操作都是本地执行</h3><p>在 Git 中的绝大多数操作都只需要访问<strong>本地文件和资源</strong>，一般不需要来自网络上其它计算机的信息。 如果你习惯于所有操作都有网络延时开销的集中式版本控制系统，Git 在这方面会让你感到速度之神赐给了 Git 超凡的能量。 因为你在本地磁盘上就有项目的完整历史，所以大部分操作看起来瞬间完成。<br>    举个例子，要浏览项目的历史，Git 不需外连到服务器去获取历史，然后再显示出来——它只需直接从本地数据库中读取。 你能立即看到项目历史。 如果想查看当前版本与一个月前的版本之间引入的修改，Git 会查找到一个月前的文件做一次本地的差异计算，而不是由远程服务器处理或从远程服务器拉回旧版本文件再来本地处理。<br>    这也意味着你离线或者没有 VPN 时，几乎可以进行任何操作。 如你在飞机或火车上想做些工作，你能愉快地提交，直到有网络连接时再上传。 如你回家后 VPN 客户端不正常，你仍能工作。 使用其它系统，做到如此是不可能或很费力的。 比如，用 Perforce，你没有连接服务器时几乎不能做什么事；用 Subversion 和 CVS，你能修改文件，但不能向数据库提交修改(因为你的本地数据库离线了)。 这看起来不是大问题，但是你可能会惊喜地发现它带来的巨大的不同。</p>
 <h3 id="1-3-3-git保证完整性"><a href="#1-3-3-git保证完整性" class="headerlink" title="1.3.3 git保证完整性"></a>1.3.3 git保证完整性</h3><p>Git 中所有数据在存储前都计算校验和，然后以校验和来引用。 这意味着<strong>不可能在 Git 不知情时更改任何文件内容或目录内容</strong>。 这个功能建构在 Git 底层，是构成 Git 哲学不可或缺的部分。 若你在传送过程中丢失信息或损坏文件，Git 就能发现。 </p>
@@ -1152,9 +1152,9 @@
 <ul>
 <li><p><code>git init</code> 表示在当前的项目目录中生成本地的git管理；</p>
 </li>
-<li><p><code>git add README.md</code> 将“README.md”文件保存至缓存区，实际开发中一般使用 <code>git add -A</code>，使用-A:将新增、删除、修改的文件改动全保存至缓存区；</p>
+<li><p><code>git add README.md</code> 将“README.md”文件保存至缓存区；</p>
 </li>
-<li><p><code>git commit -m &quot;first commit&quot;</code> 将代码从缓存区保存至本地仓库，实际开发中一般使用<code>git commit -am &quot;说明的文字&quot;</code>，使用 -a：如果没文件更改操作（增、删、改名）就可以省略git add指令；</p>
+<li><p><code>git commit -m &quot;first commit&quot;</code> 将代码从缓存区保存至本地仓库；</p>
 </li>
 <li><p><code>git remote add origin https://github.com/wteam-xq/testGit.git</code>将本地仓库与指定的远程仓库创建 联系；</p>
 </li>
@@ -1168,9 +1168,6 @@
 <p>实际项目：我们在testGit工程中修改README.md,然后更新、提交下代码 执行以下git 指令(日常使用中会用<code>git status</code>看看是否有文件需要<code>git add</code>)：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> -am <span class="string">'update readme.md'</span></span><br><span class="line">git push origin <span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>原理图</strong><br><img src="/2019/05/22/github/13.jpg" alt><br>远程仓库代码更新后， 我们进入另一本地仓库：copyTestGit\testGit，将远程仓库的代码更新至该本地仓库。</p>
 <p>在该目录下输入以下git指令：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch </span><br><span class="line">git <span class="keyword">merge</span> origin/<span class="keyword">master</span></span><br></pre></td></tr></table></figure></p>
-<p>日常使用图方便一般都是直接：<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
-<p>以上指令的详细探讨请看 少用pull,多用fetch 和 merge</p>
-<p>（注意: 本文注重git工作原理图不考虑多分支情况，且使用了git clone所以副本工程已经跟主分支建立了追踪关系，所以’pull’ ‘fetch’ 后都不接分支代码 ）</p>
 <p><strong>以上指令别的原理图</strong><br><img src="/2019/05/22/github/14.jpg" alt></p>
 <h3 id="3-3-更新到本地仓库时出现冲突"><a href="#3-3-更新到本地仓库时出现冲突" class="headerlink" title="3.3 更新到本地仓库时出现冲突"></a>3.3 更新到本地仓库时出现冲突</h3><p>首先在本地修改文件，现在副本工程修改完了代码打算提交，提交前先将远程仓库最新代码更新至本地仓库, 惯例使用指令:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
 <p>指令执行之后会发现以下<strong>冲突提示</strong>：<br><img src="/2019/05/22/github/15.jpg" alt><br>出现以上提示， 说明本次更新代码失败；主要在于本地工作区间跟远程仓库的新代码冲突了， <strong>图解</strong>如下：<br><img src="/2019/05/22/github/16.jpg" alt><br>接下来，有两种方式处理冲突: 放弃本地修改或 解决冲突后提交本地修改</p>
@@ -1180,8 +1177,7 @@
 <p>(注意： 别遗漏 “head” 后的 “ .” )</p>
 <p>然后更新远程仓库的代码就不会出现冲突了:<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>原理图</strong>如下：<br><img src="/2019/05/22/github/17.jpg" alt></p>
-<h4 id="3-3-2-解决冲突后提交本地修改"><a href="#3-3-2-解决冲突后提交本地修改" class="headerlink" title="3.3.2 解决冲突后提交本地修改"></a>3.3.2 解决冲突后提交本地修改</h4><p>覆盖本地代码解决冲突方法适合不太懂git的菜鸟， 像我这种git老鸟（其实并不是(￢_￢)）当然用更高级的git指令解决冲突。</p>
-<p>细心的同学或许已发现，缓存区 除了开始出现外，后续提交代码、更新代码篇章都在打酱油；终于，这次冲突解决事件， 它将会是主角!</p>
+<h4 id="3-3-2-解决冲突后提交本地修改"><a href="#3-3-2-解决冲突后提交本地修改" class="headerlink" title="3.3.2 解决冲突后提交本地修改"></a>3.3.2 解决冲突后提交本地修改</h4><p>缓存区 除了开始出现外，后续提交代码、更新代码篇章都在打酱油；终于，这次冲突解决事件， 它将会是主角!</p>
 <p>解决冲突后提交本地修改的思路大概如下：</p>
 <p>将本地修改的代码放在缓存区， 然后从远程仓库拉取最新代码，拉取成功后再从缓存区将修改的代码取出， 这样最新代码跟本地修改的代码就会混杂在一起， 手工解决冲突后， 提交解决冲突后的代码。</p>
 <p><strong>原理图</strong>：<br><img src="/2019/05/22/github/18.jpg" alt><br><img src="/2019/05/22/github/19.jpg" alt><br>对应到我们实际项目中， 进入 copyTestGit/testGit 执行指令<code>git pull</code>出现 (重回到上述冲突场景)<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">error: </span>Your local changes to the following files would be overwritten by merge:</span><br><span class="line">        README.md</span><br><span class="line">Please, commit your changes or stash them before you can merge.</span><br><span class="line">Aborting</span><br></pre></td></tr></table></figure></p>
