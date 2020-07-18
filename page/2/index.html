@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -250,6 +250,470 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/26/Taro总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/26/Taro总结/" itemprop="url">Taro总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-26T17:29:49+08:00">
+                2019-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="１、一些链接"><a href="#１、一些链接" class="headerlink" title="１、一些链接"></a>１、一些链接</h2><ul>
+<li><a href="https://github.com/jiangzc" target="_blank" rel="noopener">蒋志成github</a></li>
+<li><a href="https://raw.githubusercontent.com/jiangzc/My_documents/master/swagger%20(3" target="_blank" rel="noopener">API文档</a>.yaml)</li>
+<li><a href="https://petstore.swagger.io/" target="_blank" rel="noopener">看API文档的网站</a></li>
+<li><a href="https://github.com/muxi-mini-project/2019-Rank-frontend" target="_blank" rel="noopener">项目仓库</a><h4 id="应用ES6新写法解析结构"><a href="#应用ES6新写法解析结构" class="headerlink" title="应用ES6新写法解析结构"></a>应用ES6新写法解析结构</h4>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。数组、对象、字符串、函数都可以应用这种写法。</li>
+<li><p>一个最典型的例子就是</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">import</span> Taro, &#123; <span class="attribute">Component</span> &#125; from <span class="string">'<span class="variable">@tarojs</span>/taro'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当出现多个<code>this.state.xxxx</code>时候，可以吧<code>this.state</code>提出来，在函数开头写<code>const {password, stdnum} = this.state</code>，这样在此函数中就可直接使用<code>password</code>来代替<code>this.state.password</code></p>
+</li>
+</ul>
+<p>以上为项目中最常用到的内容，有关解析结构其他内容参见<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">文章</a></p>
+<h2 id="２、App-js配置"><a href="#２、App-js配置" class="headerlink" title="２、App.js配置"></a>２、<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html" target="_blank" rel="noopener">App.js配置</a></h2><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">config = &#123;    </span><br><span class="line">	pages: [      </span><br><span class="line">		<span class="symbol">'pages</span>/index/index',      </span><br><span class="line">		<span class="symbol">'pages</span>/login/login',      </span><br><span class="line">		<span class="symbol">'pages</span>/my/my',      </span><br><span class="line">		<span class="symbol">'pages</span>/help/help',      </span><br><span class="line">		<span class="symbol">'pages</span>/feedback/feedback',      </span><br><span class="line">		<span class="symbol">'pages</span>/rankLib/rankLib',      </span><br><span class="line">		<span class="symbol">'pages</span>/rankPer/rankPer',      </span><br><span class="line">		<span class="symbol">'pages</span>/rankCollege/rankCollege',      </span><br><span class="line">		<span class="symbol">'pages</span>/people/people',      </span><br><span class="line">		<span class="symbol">'pages</span>/libLogin/libLogin',      </span><br><span class="line">		<span class="symbol">'pages</span>/rankDept/rankDept',      </span><br><span class="line">		<span class="symbol">'pages</span>/visitorlogin/visitorlogin'    </span><br><span class="line">	],    </span><br><span class="line">	tabBar: &#123;      </span><br><span class="line">		<span class="built_in">list</span>: [        </span><br><span class="line">			&#123;          </span><br><span class="line">				pagePath: <span class="string">"pages/index/index"</span>,          </span><br><span class="line">				text: <span class="string">"首页"</span>,          </span><br><span class="line">				iconPath:<span class="string">'./assets/png/unhome.png'</span>,      					 					selectedIconPath:<span class="string">'./assets/png/home.png'</span>        </span><br><span class="line">			&#125;,        </span><br><span class="line">			&#123;          </span><br><span class="line">				pagePath: <span class="string">"pages/my/my"</span>,          </span><br><span class="line">				text: <span class="string">"我的"</span>,          </span><br><span class="line">				iconPath:<span class="string">'./assets/png/unmy.png'</span>,  </span><br><span class="line">				selectedIconPath:<span class="string">'./assets/png/my.png'</span>        </span><br><span class="line">			&#125;      </span><br><span class="line">		]    </span><br><span class="line">	&#125;,    </span><br><span class="line">	window: &#123;      </span><br><span class="line">		backgroundTextStyle: <span class="symbol">'light'</span>,      </span><br><span class="line">		navigationBarBackgroundColor: <span class="string">'#FF9125'</span>,      </span><br><span class="line">		navigationBarTitleText: <span class="symbol">'WeChat'</span>,      </span><br><span class="line">		navigationBarTextStyle: <span class="symbol">'white'</span>,      </span><br><span class="line">		backgroundColor: <span class="string">'#EFEFF4'</span>    </span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="３、遮罩部分的实现"><a href="#３、遮罩部分的实现" class="headerlink" title="３、遮罩部分的实现"></a>３、遮罩部分的实现</h2><ul>
+<li>包裹遮罩的View及包裹被遮罩的View分别用JS代码来显示，当显示遮罩的时候他们分别对应不同的ClassName，也就对应不同的样式。显示遮罩：mask + cover； 显示内容： unmask + uncover</li>
+<li>CSS部分值得注意的只有遮罩部分。遮罩部分的内容框：<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>: absolute;    </span><br><span class="line"><span class="attribute">z-index</span>: <span class="number">1005</span>;    </span><br><span class="line"><span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line"><span class="attribute">left</span>: <span class="number">50%</span>;    </span><br><span class="line"><span class="attribute">transform</span>:translate(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>遮罩部分的背景：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;    </span><br><span class="line"><span class="attribute">height</span>: <span class="number">100%</span>;    </span><br><span class="line"><span class="attribute">background</span>: grey;    </span><br><span class="line"><span class="attribute">position</span>: absolute;    </span><br><span class="line"><span class="attribute">z-index</span>: <span class="number">1000</span>;    </span><br><span class="line"><span class="attribute">top</span>: <span class="number">0</span>;    </span><br><span class="line"><span class="attribute">left</span>: <span class="number">0</span>;    </span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">0.6</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="４、点赞功能的实现"><a href="#４、点赞功能的实现" class="headerlink" title="４、点赞功能的实现"></a>４、点赞功能的实现</h2><h3 id="渲染点赞部分页面"><a href="#渲染点赞部分页面" class="headerlink" title="渲染点赞部分页面"></a>渲染点赞部分页面</h3><p>在获取点赞数的时候后端同时会返回一个布尔值，当这个布尔值为true说明我已经对该用户点过赞了，渲染的时候就渲染实心的图片，如果布尔值为flase说明未点过赞，渲染的时候渲染空心的图片</p>
+<h3 id="完成点赞-取消点赞"><a href="#完成点赞-取消点赞" class="headerlink" title="完成点赞/取消点赞"></a>完成点赞/取消点赞</h3><p>这部分较为容易，只需要发送给后端该用户的ID就可以，后端判断是否可以点赞或者取消点赞，200就成功，其他值就返回点赞/取消点赞失败</p>
+<h2 id="５、条件渲染"><a href="#５、条件渲染" class="headerlink" title="５、条件渲染"></a>５、条件渲染</h2><p>你可以通过用花括号包裹代码在 JSX 中嵌入几乎任何表达式 ，也包括 JavaScript 的逻辑与 &amp;&amp;，它可以方便地条件渲染一个元素。如果条件是 true，&amp;&amp; 右侧的元素就会被渲染，如果是 false，Taro 会忽略并跳过它。<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LoginStatus</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    const isLoggedIn = <span class="keyword">this</span>.props.isLoggedIn</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;<span class="type">View</span>&gt;</span><br><span class="line">        &#123;isLoggedIn &amp;&amp; &lt;<span class="type">Text</span>&gt;已登录&lt;/<span class="type">Text</span>&gt;&#125;</span><br><span class="line">        &#123;!isLoggedIn &amp;&amp; &lt;<span class="type">Text</span>&gt;未登录&lt;/<span class="type">Text</span>&gt;&#125;</span><br><span class="line">      &lt;/<span class="type">View</span>&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="６、Fetch"><a href="#６、Fetch" class="headerlink" title="６、Fetch"></a>６、Fetch</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Taro from <span class="string">"@tarojs/taro"</span>;</span><br><span class="line"><span class="comment">// 包裹一层，并且返回供外部调用</span></span><br><span class="line"><span class="comment">// amd cmd;模块发展的演变的过程；</span></span><br><span class="line"><span class="comment">// promise就是一个表示未来的事情；</span></span><br><span class="line"><span class="comment">// Fetch(url, data).then((res) =&gt; &#123; console.log(res)&#125;)</span></span><br><span class="line"><span class="keyword">const</span> preHttp = <span class="string">"https://rank.muxixyz.com/"</span>;</span><br><span class="line"><span class="keyword">const</span> Fetch = (url, <span class="keyword">data</span> = &#123;&#125;, method = <span class="string">"GET"</span>) =&gt; &#123;  </span><br><span class="line">	<span class="keyword">const</span> header = &#123;     </span><br><span class="line">		<span class="string">"content-type"</span>: <span class="string">"application/json"</span>,     </span><br><span class="line">		<span class="string">"cookie"</span>: Taro.getStorageSync(<span class="string">"cookie"</span>)  </span><br><span class="line">	&#125;;  </span><br><span class="line">		<span class="keyword">return</span> Taro.request(&#123;    </span><br><span class="line">			url: preHttp + url,    </span><br><span class="line">			<span class="keyword">data</span>,    </span><br><span class="line">			method,    </span><br><span class="line">			header  </span><br><span class="line">		&#125;).then(res =&gt; &#123;    </span><br><span class="line">			<span class="keyword">if</span> (res.statusCode === <span class="number">200</span>) &#123;      </span><br><span class="line">				<span class="keyword">if</span> (res.<span class="keyword">data</span>) &#123;        </span><br><span class="line">					<span class="keyword">return</span> res.<span class="keyword">data</span>;      &#125;</span><br><span class="line">				 <span class="keyword">else</span> &#123;        </span><br><span class="line">				 	<span class="keyword">return</span> res.code; <span class="comment">// 业务逻辑错误，返回业务错误码      </span></span><br><span class="line">				 &#125;    </span><br><span class="line">			&#125;     </span><br><span class="line">			<span class="keyword">else</span>&#123;      </span><br><span class="line">				<span class="keyword">return</span> res.statusCode;    </span><br><span class="line">			&#125;  </span><br><span class="line">		&#125;);</span><br><span class="line">&#125;;</span><br><span class="line">export <span class="keyword">default</span> Fetch;</span><br></pre></td></tr></table></figure>
+<h2 id="７、微信小程序解析运动步数时解析出错"><a href="#７、微信小程序解析运动步数时解析出错" class="headerlink" title="７、微信小程序解析运动步数时解析出错"></a>７、<a href="https://blog.csdn.net/AloneAsFoam/article/details/87374959" target="_blank" rel="noopener">微信小程序解析运动步数时解析出错</a></h2><p>核心接口  wx.login、wx.checkSession、wx.getWeRunData<br>需要注意的是当前的session是否过期 wx.checkSession判断当前session是否过期，如果过期的话就重新调用登录接口，把获取到的code传给服务端，通知服务端更新session_key（前后端必须保证session_key一致才能解析成功）</p>
+<h2 id="８、登录逻辑"><a href="#８、登录逻辑" class="headerlink" title="８、登录逻辑"></a>８、登录逻辑</h2><h3 id="（１）login页面"><a href="#（１）login页面" class="headerlink" title="（１）login页面"></a>（１）login页面</h3><p><img src="/2019/05/26/Taro总结/01.png" alt><br><img src="/2019/05/26/Taro总结/02.png" alt><br>以上是最基本的登陆思路，除了以上的login页面之外，还有liblogin页面以及vistorlogin页面也存在于“登录”代码的一部分</p>
+<h3 id="（２）liblogin页面"><a href="#（２）liblogin页面" class="headerlink" title="（２）liblogin页面"></a>（２）liblogin页面</h3><h4 id="必要意义"><a href="#必要意义" class="headerlink" title="必要意义"></a>必要意义</h4><ul>
+<li>借阅图书的次数需要从学校官网上拿数据，获得数据的条件是拥有用户的账号和密码，出于安全性考虑，账号和密码并未保存在后端数据库中</li>
+<li>账号和密码保存在本地缓存中，一旦用户清除本地缓存，那么账号和密码就没有了</li>
+<li>获取账号和密码的界面是在login页面，只有这个页面才能够获取到。</li>
+<li>为了再一次获取账号和密码然后发给后端重新写了一个和login长得一模一样的liblogin，重写的意义在于login和liblogin的API不同</li>
+</ul>
+<h4 id="代码构成"><a href="#代码构成" class="headerlink" title="代码构成"></a>代码构成</h4><p>外表与login界面相同，但是JS相关代码仅为将账号和密码发送给后端并保存在本地</p>
+<h3 id="（３）visitorlogin页面"><a href="#（３）visitorlogin页面" class="headerlink" title="（３）visitorlogin页面"></a>（３）visitorlogin页面</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>这是一个游客模式下<strong>账号绑定</strong>的页面。<br>如果在第一次进入小程序并且点击了<strong>游客模式</strong>的同学可以在<strong>我</strong>的页面点击<strong>账号绑定</strong>进入待该页面。</p>
+<h4 id="代码构成-1"><a href="#代码构成-1" class="headerlink" title="代码构成"></a>代码构成</h4><p>外表与login界面相同，内里的JS代码和login界面也相同，只不过删除掉了授权获取用户信息的弹窗和遮罩。</p>
+<h2 id="９、合并代码"><a href="#９、合并代码" class="headerlink" title="９、合并代码"></a>９、合并代码</h2><p>在这部分遇到了很多的问题，但是详细的怎么做不是一个小标题下可以写完的，在此引申出了多篇相关的文章：</p>
+<ul>
+<li><a href="https://lilixuelian.github.io/2019/05/22/github/">github的基本原理</a></li>
+<li><a href="https://lilixuelian.github.io/2019/05/22/在github中如何通过Collaborators合作者共同开发项目/">在github中如何通过Collaborators合作者共同开发项目</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/23/大一下学期开发项目过程中的技术总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/23/大一下学期开发项目过程中的技术总结/" itemprop="url">大一下学期开发项目过程中的技术总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T16:44:08+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>在大一下学期的学习过程中，我主要学习到的内容：</p>
+<ul>
+<li>MiniProject用Taro写了一个微信小程序</li>
+<li>学习React并写了一个TodoList</li>
+<li>学习HyperApp并写了一个TodoList</li>
+<li>Webpack的各种配置</li>
+<li>Hackson时速成Phaser照着人家代码学写小游戏(坦克大战)</li>
+<li>学习《CSAPP》并写Lab</li>
+</ul>
+<p>除了以上的一些大块儿内容外，还在写分享、改bug、看教程的过程中学习到了一些小的点，非常后悔的事情是在学习过程中没有随时学随时写总结，有的东西有些忘了。这篇总结可能会比较长，会努力更新完善，为自己的大一下学期做个收尾。</p>
+<h2 id="正文开始"><a href="#正文开始" class="headerlink" title="正文开始"></a>正文开始</h2><p>下面就以上学习到的内容进行总结，大部分的结构为仓库代码、环境的搭建、该框架所必备的学习到的基础知识总结、写项目的思路、遇到的问题及解决</p>
+<h3 id="Taro-—-gt-MiniProject"><a href="#Taro-—-gt-MiniProject" class="headerlink" title="Taro —&gt; MiniProject"></a>Taro —&gt; MiniProject</h3><ul>
+<li><a href="https://github.com/muxi-mini-project/2019-Rank-frontend" target="_blank" rel="noopener">仓库</a></li>
+<li>环境搭建<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install -g @tarojs/cli</span><br><span class="line">yarn <span class="built_in">global</span> add @tarojs/cli</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://lilixuelian.github.io/2019/05/26/Windows%E4%B8%8A%E4%B8%8B%E8%BD%BDReact%E3%80%81Taro%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/">遇到的问题</a></p>
+<ul>
+<li><a href="https://lilixuelian.github.io/2019/05/26/Taro%E6%80%BB%E7%BB%93/">页面的搭建、遇到的问题及解决</a></li>
+</ul>
+<h3 id="React-—-gt-TodoList"><a href="#React-—-gt-TodoList" class="headerlink" title="React —&gt; TodoList"></a>React —&gt; TodoList</h3><ul>
+<li><a href>仓库</a></li>
+<li><a href="https://lilixuelian.github.io/2019/05/26/Windows%E4%B8%8A%E4%B8%8B%E8%BD%BDReact%E3%80%81Taro%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/">环境搭建遇到的一些问题</a></li>
+<li>React基本了解的内容</li>
+<li>代码优化</li>
+<li>问题及解决</li>
+</ul>
+<h3 id="HyperApp-—-gt-TodoList"><a href="#HyperApp-—-gt-TodoList" class="headerlink" title="HyperApp —&gt; TodoList"></a>HyperApp —&gt; TodoList</h3><ul>
+<li><a href>仓库</a></li>
+<li>环境搭建</li>
+<li>HyperApp的基本思想</li>
+<li>TodoList实现的思路</li>
+<li>问题及解决</li>
+</ul>
+<h3 id="Phaser-—-gt-Tank"><a href="#Phaser-—-gt-Tank" class="headerlink" title="Phaser —&gt; Tank"></a>Phaser —&gt; Tank</h3><ul>
+<li><a href>仓库</a></li>
+<li>环境搭建</li>
+<li>Phaser必备基础知识</li>
+<li>实现游戏的基本思路</li>
+<li>问题及解决</li>
+</ul>
+<h3 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h3><ul>
+<li>环境搭建</li>
+<li>基本配置</li>
+<li>使用</li>
+</ul>
+<h3 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h3><ul>
+<li><a href>github基础知识</a></li>
+<li><a href>前端缓存</a></li>
+<li><a href>你可能不知道的若干CSS居中方式</a></li>
+<li><a href>JS断点调试</a></li>
+<li><a href>Sass</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/23/git工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lixuelian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/23/git工作流程/" itemprop="url">git工作流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T16:22:05+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="/2019/05/23/git工作流程/01.png" alt></p>
+<h3 id="具体工作流程"><a href="#具体工作流程" class="headerlink" title="具体工作流程"></a>具体工作流程</h3><ul>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -608,7 +1072,7 @@
 <h3 id="5-3-主分支（master）"><a href="#5-3-主分支（master）" class="headerlink" title="5.3 主分支（master）"></a>5.3 主分支（master）</h3><p>代码库应该有且只有一个主分支。所有提供给用户使用的正式版本，都在这个主分支上发布。</p>
 <p>Git主分支的名字，默认叫做Master。它是自动建立的，版本库初始化以后，默认就是在主分支在进行开发。</p>
 <h3 id="5-4-开发分支（develop）"><a href="#5-4-开发分支（develop）" class="headerlink" title="5.4 开发分支（develop）"></a>5.4 开发分支（develop）</h3><p>主分支只用来分布重大版本，日常开发应该在另一条分支上完成。我们把开发用的分支，叫做Develop。</p>
-<p>这个分支可以用来生成代码的最新隔夜版本（nightly）。如果想正式对外发布，就在Master分支上，对Develop分支进行”合并”（merge）。<br> Git创建Develop分支的命令<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> develop master</span><br></pre></td></tr></table></figure></p>
+<p>这个分支可以用来生成代码的最新隔夜版本（nightly）。如果想正式对外发布，就在Master分支上，对Develop分支进行”合并”（merge）。<br> Git创建Develop分支的命令<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>develop master</span><br></pre></td></tr></table></figure></p>
 <pre><code>将Develop分支发布到Master分支的命令
 </code></pre><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge --no-ff develop</span><br></pre></td></tr></table></figure>
 <p>–no-ff参数：默认情况下，Git执行”快进式合并”，会直接将Master分支指向Develop分支。强推。少用！！</p>
@@ -624,9 +1088,9 @@
 </ul>
 <p>这三种分支都属于临时性需要，使用完以后，应该删除，使得代码库的常设分支始终只有Master和Develop。</p>
 <h3 id="5-6-功能分支（feature）"><a href="#5-6-功能分支（feature）" class="headerlink" title="5.6 功能分支（feature）"></a>5.6 功能分支（feature）</h3><p>为了开发某种特定功能，从Develop分支上面分出来的。开发完成后，要再并入Develop。</p>
-<p>功能分支的名字，可以采用feature-*的形式命名。<br>  创建一个功能分支<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> feature-x develop</span><br></pre></td></tr></table></figure></p>
+<p>功能分支的名字，可以采用feature-*的形式命名。<br>  创建一个功能分支<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>feature-x develop</span><br></pre></td></tr></table></figure></p>
 <pre><code>合并到develop分支
-</code></pre> <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="literal">-</span><span class="comment">ff</span> <span class="comment">feature</span><span class="literal">-</span><span class="comment">x</span></span><br></pre></td></tr></table></figure>
+</code></pre> <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> --<span class="comment">no</span>--<span class="comment">ff</span> <span class="comment">feature</span><span class="literal">-</span><span class="comment">x</span></span><br></pre></td></tr></table></figure>
 <p>  删除feature分支<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d feature-x</span><br></pre></td></tr></table></figure></p>
 <h3 id="5-7-预发布分支（release）"><a href="#5-7-预发布分支（release）" class="headerlink" title="5.7 预发布分支（release）"></a>5.7 预发布分支（release）</h3><p>指发布正式版本之前（即合并到Master分支之前），我们可能需要有一个预发布的版本进行测试。</p>
 <p>预发布分支是从Develop分支上面分出来的，预发布结束以后，必须合并进Develop和Master分支。它的命名，可以采用release-*的形式。<br>创建一个预发布分支：<br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b <span class="keyword">release</span>-<span class="keyword">x</span> develop</span><br></pre></td></tr></table></figure></p>
@@ -635,9 +1099,9 @@
 <p>再合并到develop分支<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop</span><br><span class="line">git <span class="built_in">merge</span> <span class="comment">--no-ff release-x</span></span><br></pre></td></tr></table></figure></p>
 <p>最后记得删除预发布分支：<br><figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d <span class="keyword">release</span>-<span class="keyword">x</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="5-8-修补bug分支（hotfixes）"><a href="#5-8-修补bug分支（hotfixes）" class="headerlink" title="5.8 修补bug分支（hotfixes）"></a>5.8 修补bug分支（hotfixes）</h3><p>软件正式发布以后，难免会出现bug。这时就需要创建一个分支，进行bug修补。</p>
-<p>修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进Master和Develop分支。它的命名，可以采用fixbug-*的形式。<br>创建一个修补bug分支：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> fixbug-xx master</span><br></pre></td></tr></table></figure></p>
+<p>修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进Master和Develop分支。它的命名，可以采用fixbug-*的形式。<br>创建一个修补bug分支：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>fixbug-xx master</span><br></pre></td></tr></table></figure></p>
 <p>修补结束后，合并到master分支：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br><span class="line">git merge --no-ff fixbug-xx</span><br><span class="line">git <span class="keyword">tag</span> <span class="title">-a</span> xx</span><br></pre></td></tr></table></figure></p>
-<p>再合并到develop分支：<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="literal">-</span><span class="comment">ff</span> <span class="comment">fixbug</span><span class="literal">-</span><span class="comment">xx</span></span><br></pre></td></tr></table></figure></p>
+<p>再合并到develop分支：<br><figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">git</span> <span class="comment">checkout</span> <span class="comment">develop</span></span><br><span class="line"><span class="comment">git</span> <span class="comment">merge</span> --<span class="comment">no</span>--<span class="comment">ff</span> <span class="comment">fixbug</span><span class="literal">-</span><span class="comment">xx</span></span><br></pre></td></tr></table></figure></p>
 <p>最后，删除”修补bug分支”：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d fixbug-xx</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h1 id="ending-以下内容完善ing"><a href="#ending-以下内容完善ing" class="headerlink" title="ending 以下内容完善ing"></a>ending 以下内容完善ing</h1><h2 id="6、多人合作共同开发的工作流程"><a href="#6、多人合作共同开发的工作流程" class="headerlink" title="6、多人合作共同开发的工作流程"></a>6、多人合作共同开发的工作流程</h2><p>在基于以上对文件在被git管理过程中所处的四个阶段、三种状态以及多种分支的功能作用以及原理的了解下，可以学习多人合作共同开发的工作流程了。<br><a href="https://www.cnblogs.com/Chayeen/p/9989628.html" target="_blank" rel="noopener">参考文章１：git多人协作工作流程</a><br><a href="https://www.cnblogs.com/onelikeone/p/6857910.html" target="_blank" rel="noopener">Git 多人协作开发的过程</a></p>
@@ -1225,13 +1689,13 @@
 <h3 id="核心代码：-2"><a href="#核心代码：-2" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;  </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;  </span><br><span class="line">	<span class="attribute">position</span>: absolute; </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;  </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;  </span><br><span class="line">	<span class="attribute">margin-top</span>: -<span class="number">50px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="演示程序：-3"><a href="#演示程序：-3" class="headerlink" title="演示程序："></a>演示程序：</h3><p><a href="https://codepen.io/lilixuelian/pen/JqMbKp" target="_blank" rel="noopener">演示代码</a></p>
 <h2 id="７、未知高度的块级元素"><a href="#７、未知高度的块级元素" class="headerlink" title="７、未知高度的块级元素"></a>７、未知高度的块级元素</h2><h3 id="方法-9"><a href="#方法-9" class="headerlink" title="方法"></a>方法</h3><p>当垂直居中的元素的高度和宽度未知时，我们可以借助CSS3中的transform属性向Y轴反向偏移50%的方法实现垂直居中。但是部分浏览器存在兼容性的问题。</p>
-<h3 id="核心代码：-3"><a href="#核心代码：-3" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: absolute;    </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="核心代码：-3"><a href="#核心代码：-3" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: absolute;    </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translateY</span>(-<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="演示程序：-4"><a href="#演示程序：-4" class="headerlink" title="演示程序："></a>演示程序：</h3><p><a href="https://codepen.io/lilixuelian/pen/XwVNNg" target="_blank" rel="noopener">演示代码</a></p>
 <h1 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h1><h2 id="固定宽高元素水平垂直居中"><a href="#固定宽高元素水平垂直居中" class="headerlink" title="固定宽高元素水平垂直居中"></a>固定宽高元素水平垂直居中</h2><h3 id="方法-10"><a href="#方法-10" class="headerlink" title="方法"></a>方法</h3><p>通过margin平移元素整体宽度的一半，使元素水平垂直居中。</p>
 <h3 id="核心代码：-4"><a href="#核心代码：-4" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;    </span><br><span class="line">	<span class="attribute">width</span>: <span class="number">300px</span>;    </span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;    </span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">20px</span>;    </span><br><span class="line">	<span class="attribute">position</span>: absolute;    </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">margin</span>: -<span class="number">70px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">170px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="演示程序：-5"><a href="#演示程序：-5" class="headerlink" title="演示程序："></a>演示程序：</h3><p><a href="https://codepen.io/lilixuelian/pen/mYpOpY" target="_blank" rel="noopener">演示代码</a></p>
 <h2 id="未知宽高元素水平垂直居中"><a href="#未知宽高元素水平垂直居中" class="headerlink" title="未知宽高元素水平垂直居中"></a>未知宽高元素水平垂直居中</h2><h3 id="方法-11"><a href="#方法-11" class="headerlink" title="方法"></a>方法</h3><p>利用2D变换，在水平和垂直两个方向都向反向平移宽高的一半，从而使元素水平垂直居中。</p>
-<h3 id="核心代码：-5"><a href="#核心代码：-5" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: absolute;    </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="核心代码：-5"><a href="#核心代码：-5" class="headerlink" title="核心代码："></a>核心代码：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.child</span> &#123;    </span><br><span class="line">	<span class="attribute">position</span>: absolute;    </span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;    </span><br><span class="line">	<span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="演示程序：-6"><a href="#演示程序：-6" class="headerlink" title="演示程序："></a>演示程序：</h3><p><a href>演示代码</a></p>
 <h2 id="利用flex布局"><a href="#利用flex布局" class="headerlink" title="利用flex布局"></a>利用flex布局</h2><h3 id="方法-12"><a href="#方法-12" class="headerlink" title="方法"></a>方法</h3><p>利用flex布局，其中justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式；而align-items属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。</p>
 <p>###核心代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span> &#123;    </span><br><span class="line">	<span class="attribute">display</span>: flex;    </span><br><span class="line">	<span class="attribute">justify-content</span>: center;    </span><br><span class="line">	<span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -1507,412 +1971,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/diary/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/14/diary/" itemprop="url">diary</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T23:34:04+08:00">
-                2019-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="2019-5-14"><a href="#2019-5-14" class="headerlink" title="2019.5.14"></a>2019.5.14</h2><ul>
-<li>完成了博客的重新搭建和美化</li>
-<li>用React完成了一个todolist demo</li>
-<li>更加熟悉了indexOf()和splice()方法</li>
-<li>Ubuntu的一些命令：<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rm</span> -rf xxxxx </span><br><span class="line"><span class="keyword">rm</span> -rf xxxxx<span class="comment">/*</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>-r是循环的意思，f是不询问的意思，后面加上/*表示删除内容不删除文件夹</p>
-<ul>
-<li>今天遇到github上传文件夹灰色无法打开的问题，<a href="https://blog.csdn.net/weixin_38927964/article/details/84201322" target="_blank" rel="noopener">解决方案</a></li>
-</ul>
-<h2 id="2019-5-15"><a href="#2019-5-15" class="headerlink" title="2019.5.15"></a>2019.5.15</h2><ul>
-<li>优化了昨天todolist的<a href="https://github.com/lilixuelian/JS-exercise/tree/master/todolist(react" target="_blank" rel="noopener">代码</a>/src)</li>
-<li>写lab</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/14/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T11:33:15+08:00">
-                2019-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/14/begin-React/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lixuelian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/14/begin-React/" itemprop="url">begin React</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T10:59:50+08:00">
-                2019-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="搭建React环境"><a href="#搭建React环境" class="headerlink" title="搭建React环境"></a>搭建React环境</h3><p><a href="https://reactjs.org/docs/create-a-new-react-app.html" target="_blank" rel="noopener">官网文档</a><br>my-app表示文件夹名称<br><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">npx </span><span class="built_in">create-react-app</span> <span class="string">my-app</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> my-<span class="keyword">app</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> start</span><br></pre></td></tr></table></figure>
-<p>之后就会自动出蹦出一个页面，可以本地查看</p>
-<h3 id="初识React"><a href="#初识React" class="headerlink" title="初识React"></a>初识React</h3><h4 id="代码精简"><a href="#代码精简" class="headerlink" title="代码精简"></a>代码精简</h4><ul>
-<li>index.js是文件入口</li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> serviceWorker <span class="keyword">from</span> <span class="string">'./serviceWorker'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// If you want your app to work offline and load faster, you can change</span></span><br><span class="line"><span class="comment">// unregister() to register() below. Note this comes with some pitfalls.</span></span><br><span class="line"><span class="comment">// Learn more about service workers: https://bit.ly/CRA-PWA</span></span><br><span class="line">serviceWorker.unregister();</span><br></pre></td></tr></table></figure>
-<p>删除掉可能用不到的代码之后为<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure></p>
-<p>删除serviceworker.js文件<br>index.css文件定义了index页面的边距之类的样式，也可以暂时不要<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure></p>
-<p>同时目录下的index.css文件也可以删去<br>app.test.js是做自动化测试的时候使用的，如果不做也可以删去<br>app.js文件中div标签里的内容也可删掉，同时app.css文件的引用以及app.css文件也可以删去，logo图片的引用也可以删去，logo也可删去<br><strong>到目前为止Src目录下就非常简单了</strong></p>
-<ul>
-<li><p>app.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>index.js</p>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ReactDOM.render(&lt;App /&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>));</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="最最基本的组件的定义和使用"><a href="#最最基本的组件的定义和使用" class="headerlink" title="最最基本的组件的定义和使用"></a>最最基本的组件的定义和使用</h4><h4 id="JSX语法的学习"><a href="#JSX语法的学习" class="headerlink" title="JSX语法的学习"></a>JSX语法的学习</h4>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1965,7 +2023,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1987,7 +2045,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -2040,7 +2098,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
