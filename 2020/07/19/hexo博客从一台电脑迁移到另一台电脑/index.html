@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="github,分支,base knowledge,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,24 +79,17 @@
 
 
 
-<meta name="description" content="摘要这篇文章主要介绍一下git的分支管理机制，用形象的图片来表明git的分支是如何来实现的。实际上，git分支管理机制主要依赖于指针的变化： 分支的创建：即创建一个指向HEAD当前指向的分支、当前版本的指针。说明：此时HEAD指向master分支的f30ab版本，那么新创建的testing分支的指针也会指向master分支的f30ab版本，实际上是创建的分支的指针会指向HEAD指针指向的分支所在的">
-<meta name="keywords" content="github,分支,base knowledge">
+<meta name="description" content="第一步：将原来电脑的文件夹复制到新电脑这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。次要文件：scaffolds（文章的模板）、package.json（使用包的说明文件）和.gitignore（限定在提交的时候哪些文件可以忽略）三个次要文件为自动生成的，因此丢失也不影响博客内容，后续在hexo init时会生成这三个文件。需">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git分支管理机制">
-<meta property="og:url" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/index.html">
+<meta property="og:title" content="hexo博客从一台电脑迁移到另一台电脑">
+<meta property="og:url" content="http://lilixuelian.github.io/2020/07/19/hexo博客从一台电脑迁移到另一台电脑/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="摘要这篇文章主要介绍一下git的分支管理机制，用形象的图片来表明git的分支是如何来实现的。实际上，git分支管理机制主要依赖于指针的变化： 分支的创建：即创建一个指向HEAD当前指向的分支、当前版本的指针。说明：此时HEAD指向master分支的f30ab版本，那么新创建的testing分支的指针也会指向master分支的f30ab版本，实际上是创建的分支的指针会指向HEAD指针指向的分支所在的">
+<meta property="og:description" content="第一步：将原来电脑的文件夹复制到新电脑这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。次要文件：scaffolds（文章的模板）、package.json（使用包的说明文件）和.gitignore（限定在提交的时候哪些文件可以忽略）三个次要文件为自动生成的，因此丢失也不影响博客内容，后续在hexo init时会生成这三个文件。需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/01.png">
-<meta property="og:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/02.png">
-<meta property="og:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/03.png">
-<meta property="og:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/04.png">
-<meta property="og:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/05.png">
-<meta property="og:updated_time" content="2019-05-23T07:48:32.000Z">
+<meta property="og:updated_time" content="2020-07-19T00:20:19.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git分支管理机制">
-<meta name="twitter:description" content="摘要这篇文章主要介绍一下git的分支管理机制，用形象的图片来表明git的分支是如何来实现的。实际上，git分支管理机制主要依赖于指针的变化： 分支的创建：即创建一个指向HEAD当前指向的分支、当前版本的指针。说明：此时HEAD指向master分支的f30ab版本，那么新创建的testing分支的指针也会指向master分支的f30ab版本，实际上是创建的分支的指针会指向HEAD指针指向的分支所在的">
-<meta name="twitter:image" content="http://lilixuelian.github.io/2019/05/23/git分支管理机制/01.png">
+<meta name="twitter:title" content="hexo博客从一台电脑迁移到另一台电脑">
+<meta name="twitter:description" content="第一步：将原来电脑的文件夹复制到新电脑这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。次要文件：scaffolds（文章的模板）、package.json（使用包的说明文件）和.gitignore（限定在提交的时候哪些文件可以忽略）三个次要文件为自动生成的，因此丢失也不影响博客内容，后续在hexo init时会生成这三个文件。需">
 
 
 
@@ -126,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://lilixuelian.github.io/2019/05/23/git分支管理机制/">
+  <link rel="canonical" href="http://lilixuelian.github.io/2020/07/19/hexo博客从一台电脑迁移到另一台电脑/">
 
 
 
 
 
-  <title>git分支管理机制 | Hexo</title>
+  <title>hexo博客从一台电脑迁移到另一台电脑 | Hexo</title>
   
 
 
@@ -274,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2019/05/23/git分支管理机制/">
+    <link itemprop="mainEntityOfPage" href="http://lilixuelian.github.io/2020/07/19/hexo博客从一台电脑迁移到另一台电脑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lixuelian">
@@ -291,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git分支管理机制</h1>
+          <h1 class="post-title" itemprop="name headline">hexo博客从一台电脑迁移到另一台电脑</h1>
         
 
         <div class="post-meta">
@@ -303,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T15:37:17+08:00">
-                2019-05-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-19T08:19:38+08:00">
+                2020-07-19
               </time>
             
 
@@ -341,12 +334,20 @@
       
 
       
-        <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>这篇文章主要介绍一下git的分支管理机制，用形象的图片来表明git的分支是如何来实现的。实际上，git分支管理机制主要依赖于<strong>指针的变化</strong>：</p>
-<h3 id="分支的创建："><a href="#分支的创建：" class="headerlink" title="分支的创建："></a>分支的创建：</h3><p>即创建一个指向HEAD当前<strong>指向的分支、当前版本的</strong>指针。<br><img src="/2019/05/23/git分支管理机制/01.png" alt><br>说明：此时<code>HEAD</code>指向<code>master分支</code>的<code>f30ab</code>版本，那么新创建的<code>testing分支</code>的指针也会指向<code>master分支</code>的<code>f30ab</code>版本，实际上是创建的分支的指针会指向<code>HEAD指针</code>指向的分支所在的版本</p>
-<h3 id="分支的切换："><a href="#分支的切换：" class="headerlink" title="分支的切换："></a>分支的切换：</h3><p><img src="/2019/05/23/git分支管理机制/02.png" alt><br> 说明：切换分支时，仅仅是切换一下<code>HEAD指针</code>的指向，从<strong>原分支指</strong>向<strong>想切换的分支</strong></p>
-<h3 id="版本的提交"><a href="#版本的提交" class="headerlink" title="版本的提交"></a>版本的提交</h3><p><img src="/2019/05/23/git分支管理机制/03.png" alt><br> 说明：若此时在<code>testing分支</code>上提交了版本，则只会使该分支的指针向后移动，<strong>不会影响其他分支</strong>，如上图所示，其他分支的指针指向并没有发生变化</p>
-<h3 id="冲突的产生"><a href="#冲突的产生" class="headerlink" title="冲突的产生"></a>冲突的产生</h3><p><img src="/2019/05/23/git分支管理机制/04.png" alt><br>说明：在<code>testing分支</code>修改后，再将<code>HEAD</code>切换至<code>master</code>，然后在<code>master</code>上修改相同的文件，然后再<code>master分支</code>上提交，就会形成下面的局面：这时就有可能产生冲突，这合并版本的时候就需要解决冲突。<br><img src="/2019/05/23/git分支管理机制/05.png" alt></p>
-<h3 id="和SVN的比较"><a href="#和SVN的比较" class="headerlink" title="和SVN的比较"></a>和SVN的比较</h3><p>  SVN在创建分支的时候是将所有文件复制一份，而git仅仅是创建一个指向当前版本的指针，因此效率很高；Git中分支之间的切换仅仅是HEAD指针的变化，效率也很高；<br><strong>综上</strong>：Git的操作很依赖于<strong>HEAD指针的变化</strong></p>
+        <h3 id="第一步：将原来电脑的文件夹复制到新电脑"><a href="#第一步：将原来电脑的文件夹复制到新电脑" class="headerlink" title="第一步：将原来电脑的文件夹复制到新电脑"></a>第一步：将原来电脑的文件夹复制到新电脑</h3><p>这其中包括三个必备的文件：config.yml（站点配置_）、theme（主题文件夹）、source（博客内容文件）。次要文件：scaffolds（文章的模板）、package.json（使用包的说明文件）和.gitignore（限定在提交的时候哪些文件可以忽略）三个次要文件为自动生成的，因此丢失也不影响博客内容，后续在hexo init时会生成这三个文件。需要删除的文件：.git文件、node_modules（进行npm install会重新生成）、public（执行hexo g时会重新生成）、.deploy_git文件夹（执行hexo d时会重新生成）、db.json文件。其实上面这些可删除的文件即为.gitignore文件里面记载的可以忽略的内容。<br><strong>总结：_config.yml、theme、source、scaffolds、package.json、.gitignore应该进行拷贝，.git/，node_modules/，public/，.deploy_git/，db.json文件需要删除</strong></p>
+<h3 id="第二步：安装hexo"><a href="#第二步：安装hexo" class="headerlink" title="第二步：安装hexo"></a>第二步：安装hexo</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-cli -g</span><br><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<h3 id="第三步：新建ssh-key"><a href="#第三步：新建ssh-key" class="headerlink" title="第三步：新建ssh-key"></a>第三步：新建ssh-key</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="built_in">t</span> rsa -C <span class="string">"511167495@qq.com"</span></span><br></pre></td></tr></table></figure>
+<p>之后会出现：<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa <span class="built_in">key</span> pair.</span><br><span class="line">Enter file in which to <span class="built_in">save</span> the <span class="built_in">key</span> (/c/Users/jacky/.ssh/id_rsa):</span><br></pre></td></tr></table></figure></p>
+<p>直接回车就可以。<br>然后会出现：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Enter</span> <span class="string">passphrase</span> <span class="string">(empty</span> <span class="string">for</span> <span class="literal">no</span> <span class="string">passphrase):</span></span><br><span class="line"><span class="attr">Enter same passphrase again:</span></span><br></pre></td></tr></table></figure></p>
+<p>要求你输入密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
+<p>注意：输入密码的时候没有*字样的，直接输入就好。<br>然后会出现：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Your identification has been saved in /c/Users/jacky/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /c/Users/jacky/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">65:58:······02:4b emailname<span class="meta">@email.com</span></span><br><span class="line">The key's randomart image is:</span><br><span class="line">+--[ RSA 2048]----+</span><br><span class="line">|<span class="string">                 </span>|</span><br><span class="line">|<span class="string">       .   o .   </span>|</span><br><span class="line">|<span class="string">    . o o = o    </span>|</span><br><span class="line">|<span class="string">   . o * = o     </span>|</span><br><span class="line">|<span class="string">  E  o + o .     </span>|</span><br><span class="line">|<span class="string"> . o.   . .      </span>|</span><br><span class="line">|<span class="string">     ..          </span>|</span><br><span class="line">+-----------------+</span><br><span class="line">————————————————</span><br></pre></td></tr></table></figure></p>
+<h3 id="第四步：添加SSH-Key"><a href="#第四步：添加SSH-Key" class="headerlink" title="第四步：添加SSH Key"></a>第四步：添加SSH Key</h3><ul>
+<li>打开本地文件：id_rsa.pub（文件路径可以在上一步SSH生成成功后看到路径，具体在’Your public key has been saved in’后面），可以将这个文件在编辑器中打开，然后全选复制</li>
+<li>登陆github，点击头像位置处 Settings ——&gt; SSH and GPG keys,点击新建SSH Key</li>
+<li>将复制的内容全部粘贴在Key文本框内，title填不填均可</li>
+</ul>
+<h3 id="第五步：设置用户信息"><a href="#第五步：设置用户信息" class="headerlink" title="第五步：设置用户信息"></a>第五步：设置用户信息</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"lilixuelian"</span></span><br><span class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"511167495@qq.com"</span></span><br></pre></td></tr></table></figure>
+<h3 id="第六步：hexo正常操作"><a href="#第六步：hexo正常操作" class="headerlink" title="第六步：hexo正常操作"></a>第六步：hexo正常操作</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo s <span class="comment"># http://localhost:4000/预览</span></span><br><span class="line"><span class="variable">$ </span>hexo g <span class="comment"># 编译</span></span><br><span class="line"><span class="variable">$ </span>hexo d <span class="comment"># 发布</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,16 +368,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/分支/" rel="tag"># 分支</a>
-          
-            <a href="/tags/base-knowledge/" rel="tag"># base knowledge</a>
-          
-        </div>
-      
 
       
       
@@ -386,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/22/github/" rel="next" title="github">
-                <i class="fa fa-chevron-left"></i> github
+              <a href="/2020/07/18/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
               </a>
             
           </div>
@@ -396,8 +387,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/23/git工作流程/" rel="prev" title="git工作流程">
-                git工作流程 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/07/19/clone下载过慢的问题/" rel="prev" title="解决git-clone下载过慢的问题">
+                解决git-clone下载过慢的问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支的创建："><span class="nav-number">2.</span> <span class="nav-text">分支的创建：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支的切换："><span class="nav-number">3.</span> <span class="nav-text">分支的切换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本的提交"><span class="nav-number">4.</span> <span class="nav-text">版本的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冲突的产生"><span class="nav-number">5.</span> <span class="nav-text">冲突的产生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#和SVN的比较"><span class="nav-number">6.</span> <span class="nav-text">和SVN的比较</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：将原来电脑的文件夹复制到新电脑"><span class="nav-number">1.</span> <span class="nav-text">第一步：将原来电脑的文件夹复制到新电脑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：安装hexo"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：新建ssh-key"><span class="nav-number">3.</span> <span class="nav-text">第三步：新建ssh-key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步：添加SSH-Key"><span class="nav-number">4.</span> <span class="nav-text">第四步：添加SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步：设置用户信息"><span class="nav-number">5.</span> <span class="nav-text">第五步：设置用户信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步：hexo正常操作"><span class="nav-number">6.</span> <span class="nav-text">第六步：hexo正常操作</span></a></li></ol></div>
             
 
           </div>
